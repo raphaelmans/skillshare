@@ -1,0 +1,6 @@
+interface:
+  display_name: "Refine Communication"
+  short_description: "Clarify writing while preserving intent and voice"
+  default_prompt: "Use $refine-communication to clarify and refine the following text while preserving my intent and voice: [paste text]."
+policy:
+  allow_implicit_invocation: false
