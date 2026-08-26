@@ -1,6 +1,6 @@
 # Artifact-Driven Design Scope
 
-Determine the smallest Design Scope that fully contains the OpenSpec change before proposing or creating Paper UI. Let OpenSpec artifacts own intended behavior and scope. Use affected current specs, Paper, and repository routes, screens, components, tests, and navigation as current-state and downstream-impact evidence.
+Determine the smallest Design Scope that fully contains the OpenSpec change before proposing or creating Paper UI. Let OpenSpec artifacts own intended behavior and scope. Use affected current specs, Paper, and repository routes, screens, components, tests, navigation, and the shared UI component-system audit as current-state and downstream-impact evidence.
 
 ## Classify upward
 
@@ -16,6 +16,8 @@ Use the highest level required by the artifact set as the overall route. Keep ev
 ## Analyze the selected route
 
 For every route, separate confirmed requirements, assumptions, unresolved items, and optional enhancements.
+
+For each affected visual workspace, load `ui-system.md` and identify existing domain components, wrappers, installed primitives, built-in states, composition patterns, aliases, and token constraints that can satisfy the artifacts. Treat Configured shadcn components as preferred reuse evidence, not as requirements. Treat shadcn compatibility without configuration as an optional enhancement only; do not assume initialization in the design plan.
 
 For a **Screen/Component Change**, identify purpose, usage context, user goal, trigger, inputs, outputs, actions, states, variations, content behavior, interactions, reuse, responsive and accessibility requirements, affected screens or flows, dependencies, and downstream effects. Do not expand into a full journey audit unless impact crosses the local boundary.
 
@@ -37,6 +39,7 @@ Show an **Impact Matrix** for a Screen/Component Change and an **Experience Cove
 - States and variations
 - Decision points, branches, exceptions, and recovery
 - Dependencies and downstream impact
+- Existing component-system mapping or reuse opportunity
 - Coverage status, gap, conflict, or unresolved decision
 
 Keep the matrix in chat and working context. Never place it in Paper, persist it as a new OpenSpec artifact, or turn it into a specification frame. When a material gap originates in the artifacts, propose the owner-specific artifact edit and wait for approval.
@@ -55,6 +58,6 @@ Before considering the approved scope complete, validate requirement coverage, u
 
 Report the Paper target, OpenSpec change, selected route and escalation evidence, matrix, material gaps, optional enhancements, and recommended sequence before any Paper mutation.
 
-Also report the potentially affected existing Component Families, Screen Artboards, states, flows, and required viewports that may have drifted because of the change. Derive this candidate set from OpenSpec and repository evidence without a detailed Paper audit. Ask whether to run the targeted Sync Audit; declining or deferring it must not prevent the approved current-change design sequence. A later explicit `sync` invocation resumes this audit independently.
+Also report the component-system classification for each affected visual workspace, the Page Ownership Plan, and the potentially affected existing Component Families, Screen Artboards, states, flows, and required viewports that may have drifted because of the change. Derive this candidate set from OpenSpec and repository evidence without a detailed Paper audit. Ask whether to run the targeted Sync Audit; declining or deferring it must not prevent the approved current-state design sequence. A later explicit `sync` invocation resumes this audit independently.
 
 Treat an explicit `scope` invocation as analysis-only and stop after the report. For automatic preflight, stop and request Scope Approval. One approval authorizes the requested ordered design work while its source inputs remain unchanged outside the approved sequence: the artifact set, Paper target and pre-existing relevant design, requested boundary, and material repository context. Paper changes produced by the approved work do not invalidate it. A new conversation without unambiguous recent approval requires the analysis and approval again.

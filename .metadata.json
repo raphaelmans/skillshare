@@ -168,6 +168,23 @@
         "SKILL.md": "sha256:7bed1d552aa5e9345e493cd62cb13e65c5d829d153c349afdb2cb91c809fa6c4"
       }
     },
+    "shadcn": {
+      "source": "/Users/raphaelm/Documents/Coding/startups/ugnayph-community/.skillshare/skills/shadcn",
+      "type": "local",
+      "installed_at": "2026-08-27T01:17:13.154538+08:00",
+      "file_hashes": {
+        "SKILL.md": "sha256:25133bc8cbb66cc6fcdbf562300750f593b7f855360d669fae7103ed1d9a8ca1",
+        "cli.md": "sha256:a381e35bf36fe7bb851952c13707e01e82434fd7a4a4e53f6df26c6370838904",
+        "customization.md": "sha256:84c1d47168c4b8adb5840e4af30a4e373ae3377c1110478c8974f398dd63f5ba",
+        "registry.md": "sha256:4f239be36bd2b58e17047db1ca80ab7da00e15a8b73242e5e4d50d113c4caa05",
+        "rules/base-vs-radix.md": "sha256:2b2deb47d004285220c1fc6b38bb2edc2d0ccbcdafd031b0b189d5d8ed0d1ba8",
+        "rules/chat.md": "sha256:fcbc4eb29a3998fa3e24e9f7f1cbb2b9f33e98cb5b66a153eeccdb74e78f9612",
+        "rules/composition.md": "sha256:f282df828d83a91132a846ddb62eea149a7c7c94822e9ca88cfddf85af01aa41",
+        "rules/forms.md": "sha256:29593e14381e34626f8e0e9c15c59f3394b92a0623af6a6ec94585400123853c",
+        "rules/icons.md": "sha256:d4a58266648872d9ee07d0c2368843a1cb88b8253b7f528dd7bda9d68b6c2535",
+        "rules/styling.md": "sha256:47bd2c3b6216b96af0ab169063a83dfef7f80c58536cf69445a6f4d22753326c"
+      }
+    },
     "show-me": {
       "source": "github.com/humanlayer/skills/plugins/show-me/skills/show-me",
       "type": "github-subdir",

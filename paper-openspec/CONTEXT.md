@@ -36,6 +36,22 @@ _Avoid_: Component spec, sticker sheet
 A Paper artboard representing one material scenario at one required viewport.
 _Avoid_: Screen spec, route documentation
 
+**Module Component Page**:
+The current-state Paper page containing every canonical Component Family owned by one product module.
+_Avoid_: Change page, component-per-page
+
+**Feature Page**:
+The current-state Paper page containing the Screen Artboards for one feature within a product module.
+_Avoid_: Change page, change-slug page
+
+**Shared Component Page**:
+The current-state Paper page containing canonical Component Families that are genuinely owned across multiple modules.
+_Avoid_: Miscellaneous components, duplicate module components
+
+**Exceptional Page**:
+A non-production Paper page explicitly classified as Exploration or Archive and excluded from normal feature coverage while remaining ineligible to own canonical production components.
+_Avoid_: Unnamed draft, convention bypass
+
 **Design Scope**:
 The smallest experience boundary that fully contains the impact of an OpenSpec Change.
 _Avoid_: Requested slice, implementation size
@@ -87,6 +103,14 @@ _Avoid_: Rerun all, restart
 **Parity**:
 An evidence-based assessment of whether the required sources express the same behavior and component relationships.
 _Avoid_: Pixel equality, screenshot match
+
+**Paper Lint**:
+A read-only assessment of whether Paper pages and frames follow the structural conventions for naming, placement, colocation, and canonical reuse.
+_Avoid_: Parity, reconciliation, automatic cleanup
+
+**ASCII Component Preview**:
+A chat-only structural sketch of one Component Family and its required states or variations before Paper composition.
+_Avoid_: Screen wireframe, user-flow diagram, Paper mockup
 
 **Design Alignment**:
 Agreement between an Artifact Set and its Paper Target across every applicable visual requirement.

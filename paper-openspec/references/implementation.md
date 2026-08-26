@@ -15,13 +15,19 @@ Read every task in `tasks.md` and build a working delivery map for each incomple
 
 Keep the map in working context. Do not persist it as a new artifact or place it in Paper. Include every incomplete task, including backend, infrastructure, and other non-visual work. Order work by declared and discovered dependencies while preserving the artifact's intended sequence.
 
+## Audit the UI component system
+
+Before choosing primitives for any visual task, load and follow `ui-system.md`. Reuse the workspace-local audit gathered by an earlier slice only when its configuration, dependencies, and relevant component inventory remain unchanged; otherwise refresh it.
+
+Record the classification and configured component mapping in the working delivery map. For a Configured target, load and follow `shadcn`, prefer existing repository wrappers and installed components, and apply the shared reference's registry, dry-run, diff, overwrite, review, and approval rules. Compose primitives to match Paper semantics; never force shadcn when it weakens required behavior or accessibility. For Compatible but unconfigured or Not applicable targets, follow the shared reference without introducing shadcn implicitly.
+
 ## Preflight alignment
 
 Before changing code:
 
 1. Announce the resolved Paper file link, active change, and `implement` slice, including whether authorization came directly or from an approved Sync Plan.
 2. Confirm the change is planning-complete, active rather than archived, and valid.
-3. Inspect the repository worktree, applicable instructions, architecture, dependencies, production code, tests, commands, and existing user changes.
+3. Inspect the repository worktree, applicable instructions, architecture, dependencies, production code, tests, commands, existing user changes, and the UI component-system audit.
 4. Inspect the linked Paper page and compare OpenSpec and Paper for each mapped task. Require complete component and screen evidence only for visual requirements owned by that task or its dependencies; treat Paper as Not applicable for genuinely non-visual requirements.
 5. Mark a task blocked when its owning requirement or dependency chain intersects a Gap, missing required artboard, or unresolved business or design decision. Propagate the blocker only through actual dependents.
 6. Report blocked dependency chains, route their OpenSpec/Paper reconciliation through `sync`, and continue every dependency-ready independent task. Parity may diagnose the gap but never reconcile it.
@@ -32,7 +38,7 @@ Do not silently choose OpenSpec over Paper or Paper over OpenSpec. Do not treat 
 
 For visual tasks, load and follow `paper-desktop:design-to-code` to inspect exact Paper structure, styles, content, and computed layout. Use the canonical component frames and screen artboards from the linked file rather than an active-file selection or screenshot estimate.
 
-Load applicable repository skills for the affected boundaries, such as `$client <slice>` for client architecture and tests. When no matching skill is available, derive the implementation from repository evidence and current primary documentation. Repository conventions and tokens own implementation language; Paper owns approved composition; OpenSpec owns behavior and scope.
+Load applicable repository skills for the affected boundaries, such as `$client <slice>` for client architecture and tests. Load `shadcn` when the affected workspace is Configured; do not load it merely because an unrelated workspace uses shadcn. When no matching skill is available, derive the implementation from repository evidence and current primary documentation. Repository conventions and tokens own implementation language; Paper owns approved composition; OpenSpec owns behavior and scope.
 
 Do not add dependencies, abstractions, fixtures, or configuration solely to mimic Paper. Obtain normal approval before adding a dependency or taking an external or destructive action. Preserve unrelated user changes and implement tests at the same behavioral boundary as the production change.
 

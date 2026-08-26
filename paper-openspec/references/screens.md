@@ -10,15 +10,21 @@ Do not automatically generate mobile, tablet, and desktop. Use artifact requirem
 
 Exclude non-visual requirements such as metadata, cache invalidation, ISR, persistence, or service-worker behavior from the canvas. Keep them in the parity matrix for artifact-to-code review.
 
+Load `ui-system.md` and reuse the owning workspace's audit. When shadcn is Configured, compose screens with the same repository wrappers, installed primitives, overlay patterns, form anatomy, feedback states, semantic tokens, and icon vocabulary used by the application. Consult relevant shadcn documentation and local source for components newly introduced to the screen composition. Do not add or update repository components from this slice.
+
 ## Compose screens
 
 1. Ensure each changed component used by a screen has a complete canonical component frame. Load the component slice for missing dependencies.
-2. Reuse or create artboards named `Screen / <Surface> / <Scenario> / <Viewport>`.
-3. Clone or duplicate canonical component nodes into screens. Do not independently redraw changed components.
-4. Adjust cloned content and state-specific properties without changing the shared anatomy unless the scenario requires it.
-5. Reuse established application chrome, navigation, layout containers, primitives, and tokens.
-6. Use realistic domain content from artifacts or existing fixtures without exposing specification prose.
-7. Preserve separate artboards for states that materially alter hierarchy, available actions, visibility, or navigation.
+2. Resolve the Screen Artboard's module and human feature name from the approved Page Ownership Plan.
+3. Reuse or create `<Module> / <Feature>` and place the screen there. Never create or use a change-slug page as its current-state owner.
+4. Reuse or create artboards named `Screen / <Surface> / <Scenario> / <Viewport>`.
+5. If the only satisfactory source is on a legacy change page, copy it once into the feature page and treat the new node as current-state evidence. Preserve the legacy page unchanged.
+6. Clone or duplicate canonical component nodes from their module or shared component pages into screens. Do not independently redraw changed components.
+7. Adjust cloned content and state-specific properties without changing the shared anatomy unless the scenario requires it.
+8. Reuse established application chrome, navigation, layout containers, primitives, and tokens.
+9. Prefer configured repository wrappers and installed shadcn components over hand-drawn substitutes when they satisfy the required behavior and composition.
+10. Use realistic domain content from artifacts or existing fixtures without exposing specification prose.
+11. Preserve separate artboards for states that materially alter hierarchy, available actions, visibility, or navigation.
 
 For repeated rows, reserve fixed-width lanes for icons and trailing actions. For responsive screens, preserve intent and hierarchy rather than mechanically scaling the desktop composition.
 
@@ -28,6 +34,7 @@ After each material screen section, screenshot and verify:
 
 - The scenario's visible content, actions, navigation, and conditional elements are present.
 - Changed components match their canonical frames and are reused rather than redrawn.
+- Screen composition remains implementable with the mapped repository wrappers and configured primitives without weakening required behavior.
 - Repeated elements align across rows and states.
 - Typography, spacing, contrast, and artboard fit meet the Paper review checklist.
 - No requirement matrix, acceptance criteria, annotations, or review comments appear in the artboard.
@@ -38,4 +45,4 @@ After completing a dependency-ready flow or batch, validate upward at the approv
 
 ## Completion contract
 
-Consider the slice complete when every material visual scenario has the required viewport artboards, all changed components originate from canonical component nodes, and non-visual requirements remain off-canvas.
+Consider the slice complete when every material visual scenario has the required viewport artboards on its approved module feature page, all changed components originate from canonical nodes on their module or shared component pages, and non-visual requirements remain off-canvas.

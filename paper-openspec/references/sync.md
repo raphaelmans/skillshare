@@ -15,6 +15,8 @@ Run scope as a preflight and derive the candidate affected surfaces from OpenSpe
 - User Flows or User Journeys whose continuity may change
 - Required viewports and shared design foundations
 
+Load `ui-system.md` for every affected visual workspace and use its audit as visual-language and reuse evidence. When shadcn is Configured, include relevant repository wrappers, installed primitives, supported states, and composition rules in the comparison. This evidence can identify a Paper composition that drifted from the established component system, but it cannot create or override business behavior.
+
 Inspect only the relevant current and historical Paper nodes. Use tree summaries first, then batch exact structure and computed-style reads when necessary. Keep historical OpenSpec changes read-only.
 
 ## Infer direction per Drift Item
@@ -25,6 +27,8 @@ Do not choose one direction for the whole run. Classify every independently reco
 - **Paper to OpenSpec candidate**: Paper contains a material intentional composition or behavior that the active artifacts do not express. Treat it as a proposal, not a requirement, until approved.
 - **Unresolved**: both sources are explicit but conflict, provenance is unclear, or a decision would change business behavior without sufficient artifact evidence. Ask the user; do not guess.
 - **Aligned**: the sources are semantically equivalent. Skip mutation.
+
+A Paper composition that ignores a suitable configured component or established wrapper is normally visual or component-system drift, not a new business requirement. Classify it as a Gap only when it also contradicts a required behavior, state, accessibility contract, material composition decision, or explicit reuse decision in the artifacts. Do not pull implementation details such as shadcn aliases or registry names into OpenSpec requirements.
 
 Use code and repository history only as supporting provenance and current-state evidence. They do not override explicit OpenSpec behavior or turn accidental implementation into intent. A run may contain both inferred directions.
 
@@ -57,10 +61,11 @@ Sync Audit Approval alone never grants Sync Approval, Scope Approval, Paper Appr
 
 For **OpenSpec-to-Paper** items:
 
-1. Preserve historical change pages unchanged.
-2. Reuse existing current-change nodes when they remain valid.
-3. When an affected canonical design exists only on a previous change page, clone the affected Component Families and Screen Artboards onto the active change page.
-4. Load `components` before `screens`, update only approved drift, and review the affected scenarios and viewports.
+1. Resolve and include the Page Ownership Plan in the approved Sync Plan.
+2. Route module-owned Component Families to `<Module> / Components`, genuinely cross-module families to `Shared / Components`, and Screen Artboards to `<Module> / <Feature>`.
+3. Reuse and update current-state nodes in place when they remain valid. Never create or append to an OpenSpec change-slug page.
+4. Preserve legacy change pages unchanged. When a needed design exists only there, copy only the affected node once into its current-state owner page and use that new node as canonical thereafter.
+5. Load `components` before `screens`, apply their Page Ownership Plan and shared UI component-system audit, update only approved drift, and review the affected scenarios and viewports.
 
 For **Paper-to-OpenSpec** items:
 

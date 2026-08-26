@@ -8,6 +8,8 @@ Read the completed coverage matrix from the shared workflow. Inspect Paper with 
 
 Inspect relevant production components, routes, state handling, tests, styles, and design tokens. When a runnable UI is already available or can be started without changing production code, inspect rendered structure and screenshots through available browser tooling. Do not add code, dependencies, fixtures, or configuration solely to make the audit possible.
 
+Load `ui-system.md` for each affected visual workspace. When shadcn is Configured, compare Paper and code against the actual repository wrappers, installed component anatomy and variants, resolved paths, semantic tokens, icon library, and documented composition and accessibility behavior. Keep this inspection read-only.
+
 If required implementation code does not exist, compare artifacts with Paper, mark code evidence as Pending Evidence, and report that Full Parity waits for implementation.
 
 ## Compare semantics
@@ -21,6 +23,7 @@ Evaluate each requirement scenario across these axes:
 - Component-family reuse and screen composition
 - Responsive hierarchy at required viewports
 - Established tokens, typography, spacing, and layout intent
+- Established component-system reuse and composition where it materially affects consistency or implementation
 - Non-visual artifact-to-code behavior
 
 Do not require pixel identity.
@@ -34,6 +37,8 @@ Classify each row:
 - **Not applicable**: The source cannot represent the requirement, such as a non-visual cache rule in Paper.
 
 Never label missing behavior as Close or Not applicable merely because screenshots look similar or implementation has not started.
+
+Treat custom markup that could reuse a configured shadcn component as non-blocking component-system drift when behavior, accessibility, states, composition, and visual language still agree. Classify it as a Gap only when the reinvention causes a required semantic, interaction, state, accessibility, token, or material composition mismatch. Shadcn compatibility without configuration is never parity evidence.
 
 ## Route by owner
 

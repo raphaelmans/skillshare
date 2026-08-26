@@ -28,9 +28,10 @@ Resolve one change in this order:
 
 1. Use an explicit change argument.
 2. Use an unambiguous change named in the recent conversation.
-3. Match the current Paper page name to a repository change.
-4. Use the sole active planning-complete change in the repository.
-5. Ask the user when multiple plausible changes remain or no change can be established.
+3. Use the sole active planning-complete change in the repository.
+4. Ask the user when multiple plausible changes remain or no change can be established.
+
+Do not infer a change identifier from a Paper page name. Current-state pages are named for product modules and features and may be affected by many OpenSpec changes.
 
 Interpret a recognized first argument (`scope`, `components`, `screens`, `sync`, `parity`, `implement`, `design`, or `all`) as a slice. Interpret any other first argument as a change identifier. Allow the slice and change in either supported form, such as `$paper-openspec scope barangay-routes` or `$paper-openspec barangay-routes sync`.
 
@@ -70,6 +71,12 @@ Inspect relevant routes, components, tokens, stylesheets, tests, and existing UI
 
 If no repository visual system exists, reuse a coherent existing Paper token system. If neither source exists, provide Paper's required design brief in chat before creating nodes. Never overwrite conflicting shared Paper tokens without explicit approval.
 
+## Audit the UI component system
+
+For every selected slice that involves a visual component, screen, state, or interaction, read and follow `ui-system.md`. Run its audit once per affected owning workspace and reuse the result until material repository context changes.
+
+Apply the audit to `scope`, `components`, `screens`, visual rows in `sync` and `parity`, and visual tasks in `implement`. The audit is repository evidence, not a new source of business intent. A Configured shadcn workspace establishes a preferred component vocabulary; a Compatible but unconfigured workspace establishes only an optional opportunity and authorizes no setup or dependency changes.
+
 ## Build the coverage matrix
 
 For `scope`, build the route-appropriate Impact Matrix or Experience Coverage Matrix from the scope reference. For parity without a prior scope pass, maintain a working matrix with one row per requirement scenario and these fields:
@@ -100,16 +107,26 @@ Treat explicit `scope` as analysis-only and stop after its report even if approv
 
 At the end of scope, derive potentially affected existing Component Families, Screen Artboards, states, flows, and required viewports from artifacts and repository evidence. Offer a targeted Sync Audit without performing detailed Paper reads. An explicit `sync` invocation itself grants read-only Sync Audit Approval; otherwise wait for approval before spending Paper calls on the audit. Read and follow the sync reference for the audit and any reconciliation.
 
+Also resolve a Page Ownership Plan in working context:
+
+- Place each module-owned canonical Component Family on `<Module> / Components`.
+- Place a Component Family on `Shared / Components` only when ownership and reuse genuinely cross module boundaries.
+- Place each Screen Artboard on `<Module> / <Feature>`.
+- Treat `Exploration / <Name>` and `Archive / <Name>` as exceptional noncanonical pages that cannot own current production components or screen coverage.
+
+Use human product names from artifacts and established repository language. Do not derive page titles from the OpenSpec change identifier. Include every target page in the scope report and approval boundary.
+
 ## Connect to Paper
 
 1. Ensure Paper Desktop is running. If the MCP connection fails, ask the user to open Paper Desktop.
 2. Follow the already resolved Paper-target sequence: load the guide, call `open_file` with the supplied link, and retain the canonical file ID.
-3. Inspect the selection, tokens, and relevant artboards using that file ID.
-4. During scope analysis, limit Paper reads to target validation and immediately relevant current-change context. Do not audit historical or potentially affected surfaces without Sync Audit Approval, and never create pages, nodes, annotations, or comments.
-5. After valid Scope Approval for a design-producing route, reuse or create one Paper page named exactly after the OpenSpec change identifier inside that file.
-6. When creating a page, pass the canonical file ID to `create_page`, then call `open_file` with the same file ID and returned page ID before editing.
-7. Call `get_font_family_info` before the first typographic write in the session.
-8. Pass the canonical file ID to every operation that accepts `fileId`, write incrementally, screenshot after meaningful changes, apply targeted corrections, and call `finish_working_on_nodes` with that file ID when done.
+3. Inspect tokens and the module component and feature pages named by the Page Ownership Plan using that file ID.
+4. During scope analysis, limit Paper reads to target validation and immediately relevant current-state page context. Do not audit other potentially affected surfaces or legacy pages without Sync Audit Approval, and never create pages, nodes, annotations, or comments.
+5. After valid Scope Approval for a design-producing route, reuse or create each approved current-state page: `<Module> / Components`, `Shared / Components`, or `<Module> / <Feature>` as applicable. Never create an OpenSpec change-slug page.
+6. When creating a page, pass the canonical file ID to `create_page`, then call `open_file` with the same file ID and returned page ID before editing. Repeat only for missing approved owner pages.
+7. Treat legacy change pages as noncanonical migration evidence. Preserve them unchanged. If an approved current design exists only there, copy only the needed node once into its current-state owner page, reconcile it there, and use the current-state node as canonical thereafter.
+8. Call `get_font_family_info` before the first typographic write in the session.
+9. Pass the canonical file ID to every operation that accepts `fileId`, write incrementally, screenshot after meaningful changes, apply targeted corrections, and call `finish_working_on_nodes` with that file ID when done.
 
 Do not create a new Paper file automatically. Do not switch to another file because it is open or recent. Do not use comment threads to store requirements, review notes, or discrepancies.
 
@@ -118,9 +135,9 @@ Do not create a new Paper file automatically. Do not switch to another file beca
 Treat bare invocation as `resume`, not as a destructive rerun:
 
 1. Run scope analysis and stop for Scope Approval when no valid recent approval exists or its inputs changed.
-2. Follow the approved User Flow or Design Batch order and compare required component families and states with existing component frames.
+2. Follow the approved User Flow or Design Batch order and compare required component families and states with canonical frames on their module or shared component pages.
 3. Complete the first missing or partial dependency-ready component family.
-4. Compare required scenario/viewport combinations with existing screen artboards.
+4. Compare required scenario/viewport combinations with existing screen artboards on their module feature pages.
 5. Complete the first missing or partial screen using canonical component nodes, then validate continuity at the approved scope.
 6. When component and screen coverage is complete, run parity read-only when requested or included by the selected slice.
 7. When Design Alignment is complete but required code evidence is missing, report Full Parity pending and provide the exact explicit `implement` invocation needed to authorize code changes.
