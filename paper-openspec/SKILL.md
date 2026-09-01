@@ -1,22 +1,22 @@
 ---
 name: paper-openspec
-description: Classify the artifact-driven UI/UX scope of a planning-complete OpenSpec change, turn approved scope into Paper component families and scenario screens, infer and reconcile drift between OpenSpec and Paper, explicitly implement an approved Paper design through its tasks, resume partial work, and audit semantic parity with code. Require an explicit Paper file link from the request or unambiguous recent chat context. Use when the user invokes $paper-openspec, asks to scope, create, continue, or sync Paper UI from a 4/4 OpenSpec change, explicitly wants to implement approved Paper work, or wants to compare an implementation with Paper and its business requirements.
+description: Audit an explicitly linked Paper file for page-hierarchy and canonical-surface structural conventions without requiring an OpenSpec change; classify the artifact-driven UI/UX scope of a planning-complete change; design, sync, and implement approved Paper work; resume partial design; and audit semantic parity with code. Require a Paper file link from the request or unambiguous recent chat context. Use when the user invokes $paper-openspec, asks to lint or audit Paper structure, scope or create Paper UI from a 4/4 OpenSpec change, continue or sync design work, implement an approved Paper design, or compare Paper and code with business requirements.
 ---
 
 # Paper OpenSpec
 
-Route OpenSpec-driven scope analysis, design, implementation, and parity work through modular slices. Treat a bare invocation as a context-aware design resume operation, preserve satisfactory work, and keep specifications off the Paper canvas.
+Route Paper structure linting and OpenSpec-driven scope, design, implementation, sync, and parity work through modular slices. Treat a bare invocation as a context-aware design resume operation, preserve satisfactory work, and keep specifications off the Paper canvas.
 
 ## Start
 
 1. Read [references/workflow.md](references/workflow.md) completely.
 2. Resolve one explicit Paper file link from the latest request or unambiguous recent chat context. If none exists, ask for the link and stop.
 3. Determine whether the user named a slice, a change, both, or neither.
-4. Resolve and validate one planning-complete OpenSpec change before modifying Paper or production code.
+4. For `lint`, skip change resolution and artifact-completeness checks. For every change-bound slice, resolve and validate one planning-complete OpenSpec Change before modifying Paper or production code.
 5. Open the linked Paper file and retain its canonical file ID for every subsequent Paper call that accepts `fileId`.
-6. Inspect the change artifacts, affected current specs, repository UI conventions, and implementation state. Inspect the linked Paper file only to the depth required by the selected slice and its audit authorization.
+6. Inspect only the evidence required by the selected slice. For `lint`, inspect the complete live page hierarchy and the canonical frames needed to assess structure. For change-bound slices, inspect the change artifacts, affected current specs, repository UI conventions, implementation state, and authorized Paper surfaces.
 7. Select the smallest applicable slice set and read every selected reference completely before acting.
-8. When any selected slice involves a visual surface, read [references/ui-system.md](references/ui-system.md) completely and run its shared workspace-local audit before choosing, drawing, comparing, or implementing component primitives.
+8. When a selected change-bound slice analyzes or changes a visual surface, read [references/ui-system.md](references/ui-system.md) completely and run its shared workspace-local audit before choosing, drawing, comparing, or implementing component primitives. Do not run this audit for structural `lint` alone.
 9. Before any design-producing request, run `scope`, report the artifact-driven analysis, and obtain valid Scope Approval before modifying Paper. Treat an explicit `scope` invocation as analysis-only.
 10. Build or refresh the appropriate coverage or impact matrix in working context only. Never draw or persist that matrix on the Paper canvas or create a new artifact for it.
 11. Preserve existing Paper and implementation work that already satisfies the artifacts. Apply targeted changes instead of recreating it.
@@ -26,6 +26,7 @@ Route OpenSpec-driven scope analysis, design, implementation, and parity work th
 
 | Slice | Load when the task involves | Reference |
 | --- | --- | --- |
+| `lint` | Auditing the linked Paper file's page hierarchy, surface placement, colocation, exceptional pages, or canonical reuse without changing it | [references/lint.md](references/lint.md) |
 | `scope` | Classifying a change as a screen/component change, user flow, user journey, or product overhaul before Paper design | [references/scope.md](references/scope.md) |
 | `components` | Component families, variants, states, or the component inventory is incomplete | [references/components.md](references/components.md) |
 | `screens` | Routes, views, scenarios, responsive targets, or screen composition | [references/screens.md](references/screens.md) |
@@ -35,6 +36,8 @@ Route OpenSpec-driven scope analysis, design, implementation, and parity work th
 
 Treat `design` as `scope` + `components` + `screens`. Treat `all` as `scope` + `components` + `screens` + `parity`.
 
+Treat `lint` as a standalone Paper-target operation. Do not infer or require an OpenSpec Change, verify a 4/4 artifact set, run `scope`, request approval, or mutate Paper, OpenSpec, production code, tasks, or the Paper Manifest. Keep `lint` outside `design`, `all`, and bare resume. Inspect live Paper structure even when a valid manifest exists; use manifest and repository evidence only to disambiguate names or ownership.
+
 Treat an explicit `implement` invocation as Paper Approval of the linked composition and authorization to modify production code for the resolved active change. A `sync` run may delegate to `implement` only after its displayed plan explicitly asks for and receives code authorization. Run the implementation alignment preflight before writing code in either case. Keep `implement` outside `all`, and never select it during bare resume.
 
 When invoked as `$paper-openspec <change>`, resume that change. When invoked as `$paper-openspec` without arguments, infer the change and resume from the first incomplete or stale slice. Do not merely show a menu when one change is unambiguous.
@@ -42,6 +45,7 @@ When invoked as `$paper-openspec <change>`, resume that change. When invoked as 
 Require a Paper file link in either form. The link may appear anywhere in the user's message:
 
 ```text
+$paper-openspec lint <paper-file-url>
 $paper-openspec <paper-file-url> barangay-routes
 $paper-openspec scope barangay-routes <paper-file-url>
 $paper-openspec screens barangay-routes <paper-file-url>
@@ -60,6 +64,7 @@ When a higher scope introduces lower-level dependencies, design downward: create
 ## Preserve These Invariants
 
 - Treat Paper as the latest approved design state. Put module-owned canonical Component Frames on `<Module> / Components`, genuinely cross-module families on `Shared / Components`, and Screen Artboards on `<Module> / <Feature>`.
+- Keep `lint` file-wide and strictly read-only. Report evidence-backed structural findings without converting them into parity gaps, inferred requirements, manifest edits, or automatic cleanup.
 - Require an explicit Paper file link. Never choose a target through the active file, recent-file order, or `list_files`.
 - Open the linked file before inspecting it and pass its canonical file ID to every subsequent Paper read or write that accepts `fileId`.
 - Never create specification frames, acceptance-criteria tables, coverage matrices, annotations, or comments in Paper. Do not use Paper comment threads as a specification channel.
@@ -82,6 +87,13 @@ When a higher scope introduces lower-level dependencies, design downward: create
 - Load the Paper MCP guide before other Paper operations, review screenshots after meaningful changes, and always finish working on edited nodes.
 
 ## Review Discipline
+
+For lint work:
+
+1. Report the resolved Paper file link and `lint` slice; do not resolve an OpenSpec Change.
+2. Audit the complete page hierarchy and inspect canonical frames only to the depth needed to evaluate placement, colocation, exceptional-page classification, and reuse.
+3. Report each Lint Finding with its Paper location, violated convention, evidence, and recommended canonical owner or corrective action; separate unresolved structural evidence as Pending Evidence.
+4. Make no changes and do not issue Design Alignment or Full Parity verdicts.
 
 For scope work:
 

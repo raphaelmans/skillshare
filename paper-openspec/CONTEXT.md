@@ -13,8 +13,48 @@ The proposal, delta specifications, design, and tasks belonging to an OpenSpec C
 _Avoid_: Spec page, Paper notes
 
 **Paper Target**:
-The explicitly linked Paper file that receives and contains the design work for an OpenSpec Change.
+The Paper file selected explicitly for the current request or resolved from one unambiguous Paper Manifest fallback.
 _Avoid_: Active file, current canvas, recent file
+
+**Paper Manifest**:
+The single committed root `PAPER.md` record of durable Paper targeting, current-state page ownership, canonical surface mappings, repository UI-system context, required viewports, and freshness evidence.
+_Avoid_: Workspace manifest, specification, parity report, audit cache
+
+**Manifest Root**:
+The repository directory that contains `openspec/` and owns its single Paper Manifest, even when nested inside a larger Git monorepo.
+_Avoid_: Git root, workspace manifest directory
+
+**Paper Initialization**:
+An explicit project-level, Paper-read-only structural inventory pass that creates or refreshes the Paper Manifest without requiring an active OpenSpec Change or becoming a prerequisite for other workflow slices.
+_Avoid_: Automatic bootstrap, mandatory preflight, full audit
+
+**Manifest Refresh**:
+An explicit Paper Initialization rerun that rebuilds the structural inventory, preserves confirmed valid entries, and removes an entry only after confirming its canonical surface is absent.
+_Avoid_: Automatic rebuild, parity rerun, blind replacement
+
+**Manifest Migration**:
+An explicitly approved conversion of an existing Paper Manifest whose schema is unsupported or whose structure is malformed.
+_Avoid_: Silent rewrite, destructive refresh
+
+**Manifest Entry**:
+A durable mapping from a canonical Paper surface to its owner page and relevant repository evidence.
+_Avoid_: Requirement, specification, audit finding
+
+**Structural Inventory**:
+The observed current-state pages, canonical Component Families, Screen Artboards, and repository mappings recorded by Paper Initialization without inferring missing or intended coverage.
+_Avoid_: Coverage matrix, design plan, parity audit
+
+**Stale Manifest Entry**:
+A Manifest Entry whose recorded target, page ownership, surface locator, or repository evidence can no longer be trusted without focused verification.
+_Avoid_: Design Drift, parity gap, missing requirement
+
+**Staleness Evidence**:
+A concrete affected-path change, OpenSpec surface impact, locator failure, name or ownership mismatch, or reported manual Paper edit that makes a Manifest Entry stale; elapsed time alone is insufficient.
+_Avoid_: Expiration date, routine re-audit
+
+**Paper Locator Hint**:
+A cached Paper page or node identifier paired with a human name to accelerate lookup without becoming authoritative.
+_Avoid_: Canonical ID, source of truth, unnamed locator
 
 **Visual Requirement**:
 A requirement whose observable outcome changes visible content, state, interaction, navigation, hierarchy, or responsive composition.
@@ -105,8 +145,12 @@ An evidence-based assessment of whether the required sources express the same be
 _Avoid_: Pixel equality, screenshot match
 
 **Paper Lint**:
-A read-only assessment of whether Paper pages and frames follow the structural conventions for naming, placement, colocation, and canonical reuse.
-_Avoid_: Parity, reconciliation, automatic cleanup
+An independently invocable, Paper-target-level, read-only assessment of whether current-state pages and canonical frames follow structural conventions for naming, placement, colocation, exceptional-page classification, and canonical reuse; it requires no OpenSpec Change and never repairs findings.
+_Avoid_: Parity, reconciliation, initialization, automatic cleanup
+
+**Lint Finding**:
+An evidence-backed structural convention violation identified by Paper Lint, with its Paper location, violated convention, and recommended canonical owner or corrective action.
+_Avoid_: Design Drift, parity gap, automatic fix
 
 **ASCII Component Preview**:
 A chat-only structural sketch of one Component Family and its required states or variations before Paper composition.

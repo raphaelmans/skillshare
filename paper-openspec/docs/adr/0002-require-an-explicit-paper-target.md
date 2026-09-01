@@ -1,3 +1,3 @@
-# Require an explicit Paper target
+# Resolve the Paper target explicitly or from the Paper Manifest
 
-Every `$paper-openspec` run requires a Paper file link from the latest request or unambiguous recent chat context. The workflow opens that exact file and passes its canonical file ID to every Paper operation that accepts `fileId` rather than trusting whichever file is active or recent, preventing otherwise valid design work from landing in the wrong file.
+Every Paper Initialization and Manifest Refresh requires an explicit Paper file link and records it in the committed Paper Manifest. If that link differs from an existing manifest target, the operation stops with a bounded retarget plan and requires explicit approval before replacing the target or inventory. Later non-initialization `$paper-openspec` runs prefer an explicit request link, then one unambiguous recent-chat link, then the manifest's single target; they never trust the active file, recent-file order, or `list_files`.

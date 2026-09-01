@@ -1,0 +1,3 @@
+# Expose Paper Lint as an independent slice
+
+`paper-openspec lint` audits one explicitly linked Paper Target without requiring an active OpenSpec Change, Scope Approval, or mutation approval. It scans the live Paper page hierarchy and canonical frames for naming, placement, colocation, exceptional-page classification, and reuse violations, reports evidence-backed Lint Findings, and changes neither Paper, OpenSpec, production code, nor the Paper Manifest; initialization may report the same structural findings while building an inventory, but lint remains independently runnable and strictly read-only so structural health is not conflated with manifest maintenance, requirement parity, or reconciliation.

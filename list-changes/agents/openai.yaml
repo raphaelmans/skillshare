@@ -1,0 +1,4 @@
+interface:
+  display_name: "List Changes"
+  short_description: "Turn commit history into stakeholder updates"
+  default_prompt: "Use $list-changes to summarize recent repository changes for nontechnical stakeholders."

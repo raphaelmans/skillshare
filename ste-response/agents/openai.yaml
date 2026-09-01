@@ -1,0 +1,4 @@
+interface:
+  display_name: "STE Response"
+  short_description: "Write clear, STE-aligned agent responses"
+  default_prompt: "Use $ste-response to explain this topic in clear, STE-aligned English."

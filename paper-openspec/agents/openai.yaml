@@ -1,4 +1,4 @@
 interface:
   display_name: "Paper OpenSpec"
-  short_description: "Scope, sync, design, and implement OpenSpec UI"
-  default_prompt: "Use $paper-openspec with this Paper file link to scope, sync, or resume the active OpenSpec change."
+  short_description: "Lint, scope, sync, design, and deliver Paper UI"
+  default_prompt: "Use $paper-openspec with this Paper file link to lint its structure or scope, sync, and deliver OpenSpec UI."
