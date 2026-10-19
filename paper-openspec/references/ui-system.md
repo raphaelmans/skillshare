@@ -40,6 +40,8 @@ For a **Not applicable** workspace, use the established repository component sys
 
 The audit itself is read-only. Keep its results in working context; do not add them to Paper or invent OpenSpec requirements, decisions, or tasks solely to record the audit.
 
+For `inventory-tree` and the inventory phase of `init`, audit only workspaces mapped to observed canonical surfaces. Record current configuration and component roots without proposing adoption, additions, or implementation work. Return that context to the inventory caller; `init` owns any manifest serialization.
+
 `scope`, `components`, `screens`, `sync`, and `parity` may inspect shadcn configuration, local source, CLI info, and documentation, but may not add, update, or overwrite repository components. Only an authorized `implement` run may change production code.
 
 During `implement`, search installed components and configured registries before proposing custom UI. Resolve a registry explicitly and obtain approval before adding a missing registry item or dependency. Preview changes to existing components with dry-run and diff, never overwrite local changes without explicit approval, review every added file, and run the affected verification gates.

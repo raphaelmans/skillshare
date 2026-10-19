@@ -1,22 +1,24 @@
 ---
 name: paper-openspec
-description: Audit an explicitly linked Paper file for page-hierarchy and canonical-surface structural conventions without requiring an OpenSpec change; classify the artifact-driven UI/UX scope of a planning-complete change; design, sync, and implement approved Paper work; resume partial design; and audit semantic parity with code. Require a Paper file link from the request or unambiguous recent chat context. Use when the user invokes $paper-openspec, asks to lint or audit Paper structure, scope or create Paper UI from a 4/4 OpenSpec change, continue or sync design work, implement an approved Paper design, or compare Paper and code with business requirements.
+description: Inventory a Paper page tree and its canonical surfaces; initialize or refresh a repository's Paper Manifest; audit Paper structure; scope, design, sync, implement, resume, and review OpenSpec-driven Paper UI. Use when the user invokes $paper-openspec, including inventory-tree, init, and lint, or asks about its Paper page arrangement conventions.
 ---
 
 # Paper OpenSpec
 
-Route Paper structure linting and OpenSpec-driven scope, design, implementation, sync, and parity work through modular slices. Treat a bare invocation as a context-aware design resume operation, preserve satisfactory work, and keep specifications off the Paper canvas.
+Route Paper Manifest initialization, Paper structure linting, and OpenSpec-driven scope, design, implementation, sync, and parity work through modular slices. Treat a bare invocation as a context-aware design resume operation, preserve satisfactory work, and keep specifications off the Paper canvas.
 
 ## Start
 
+For an explicit `inventory-tree` invocation, read [references/inventory-tree.md](references/inventory-tree.md) completely and follow its standalone route. It owns the shared page arrangement and inventory rules. Skip the change-bound startup below: this slice needs no repository, OpenSpec Change, scope approval, or manifest write. For a conventions-only question, explain its page arrangement without opening a live Paper file.
+
 1. Read [references/workflow.md](references/workflow.md) completely.
-2. Resolve one explicit Paper file link from the latest request or unambiguous recent chat context. If none exists, ask for the link and stop.
+2. Resolve the Paper file link through the shared workflow. `init` always requires the link in the current request; never reuse a recent link or manifest target for initialization.
 3. Determine whether the user named a slice, a change, both, or neither.
-4. For `lint`, skip change resolution and artifact-completeness checks. For every change-bound slice, resolve and validate one planning-complete OpenSpec Change before modifying Paper or production code.
+4. For `init` and `lint`, skip change resolution and artifact-completeness checks. For every change-bound slice, resolve and validate one planning-complete OpenSpec Change before modifying Paper or production code.
 5. Open the linked Paper file and retain its canonical file ID for every subsequent Paper call that accepts `fileId`.
-6. Inspect only the evidence required by the selected slice. For `lint`, inspect the complete live page hierarchy and the canonical frames needed to assess structure. For change-bound slices, inspect the change artifacts, affected current specs, repository UI conventions, implementation state, and authorized Paper surfaces.
+6. Inspect only the evidence required by the selected slice. For `init`, inspect the structural inventory and repository mappings defined by its reference. For `lint`, inspect the complete live page hierarchy and the canonical frames needed to assess structure. For change-bound slices, inspect the change artifacts, affected current specs, repository UI conventions, implementation state, and authorized Paper surfaces.
 7. Select the smallest applicable slice set and read every selected reference completely before acting.
-8. When a selected change-bound slice analyzes or changes a visual surface, read [references/ui-system.md](references/ui-system.md) completely and run its shared workspace-local audit before choosing, drawing, comparing, or implementing component primitives. Do not run this audit for structural `lint` alone.
+8. When `init` maps observed surfaces to repository workspaces, or a selected change-bound slice analyzes or changes a visual surface, read [references/ui-system.md](references/ui-system.md) completely and run its shared workspace-local audit. Do not run this audit for structural `lint` alone.
 9. Before any design-producing request, run `scope`, report the artifact-driven analysis, and obtain valid Scope Approval before modifying Paper. Treat an explicit `scope` invocation as analysis-only.
 10. Build or refresh the appropriate coverage or impact matrix in working context only. Never draw or persist that matrix on the Paper canvas or create a new artifact for it.
 11. Preserve existing Paper and implementation work that already satisfies the artifacts. Apply targeted changes instead of recreating it.
@@ -26,6 +28,8 @@ Route Paper structure linting and OpenSpec-driven scope, design, implementation,
 
 | Slice | Load when the task involves | Reference |
 | --- | --- | --- |
+| `inventory-tree` | Describing page arrangement or reporting the observed live page tree and canonical surfaces without writing a manifest | [references/inventory-tree.md](references/inventory-tree.md) |
+| `init` | Creating or refreshing root `PAPER.md` from an explicit Paper target without resolving a change | [references/initialization.md](references/initialization.md) |
 | `lint` | Auditing the linked Paper file's page hierarchy, surface placement, colocation, exceptional pages, or canonical reuse without changing it | [references/lint.md](references/lint.md) |
 | `scope` | Classifying a change as a screen/component change, user flow, user journey, or product overhaul before Paper design | [references/scope.md](references/scope.md) |
 | `components` | Component families, variants, states, or the component inventory is incomplete | [references/components.md](references/components.md) |
@@ -36,7 +40,11 @@ Route Paper structure linting and OpenSpec-driven scope, design, implementation,
 
 Treat `design` as `scope` + `components` + `screens`. Treat `all` as `scope` + `components` + `screens` + `parity`.
 
-Treat `lint` as a standalone Paper-target operation. Do not infer or require an OpenSpec Change, verify a 4/4 artifact set, run `scope`, request approval, or mutate Paper, OpenSpec, production code, tasks, or the Paper Manifest. Keep `lint` outside `design`, `all`, and bare resume. Inspect live Paper structure even when a valid manifest exists; use manifest and repository evidence only to disambiguate names or ownership.
+Treat `inventory-tree` as a standalone, read-only Paper-target operation with a chat report. Keep it outside `design`, `all`, and bare resume. `init` reuses its inventory procedure to write the manifest; `lint` reuses its arrangement rules to assess compliance.
+
+Treat `init` as a standalone project-level operation. Require root `openspec/` and an explicit Paper link, but do not infer or require an OpenSpec Change, verify a 4/4 artifact set, or run `scope`. Read Paper, OpenSpec, and repository code; mutate only root `PAPER.md`. Keep `init` outside `design`, `all`, and bare resume.
+
+Treat `lint` as a standalone Paper-target operation. Do not infer or require an OpenSpec Change, verify a 4/4 artifact set, run `scope`, request approval, or mutate Paper, OpenSpec, production code, tasks, or the Paper Manifest. Keep `lint` outside `init`, `design`, `all`, and bare resume. Inspect live Paper structure even when a valid manifest exists; use manifest and repository evidence only to disambiguate names or ownership.
 
 Treat an explicit `implement` invocation as Paper Approval of the linked composition and authorization to modify production code for the resolved active change. A `sync` run may delegate to `implement` only after its displayed plan explicitly asks for and receives code authorization. Run the implementation alignment preflight before writing code in either case. Keep `implement` outside `all`, and never select it during bare resume.
 
@@ -45,6 +53,8 @@ When invoked as `$paper-openspec <change>`, resume that change. When invoked as 
 Require a Paper file link in either form. The link may appear anywhere in the user's message:
 
 ```text
+$paper-openspec inventory-tree <paper-file-url>
+$paper-openspec init <paper-file-url>
 $paper-openspec lint <paper-file-url>
 $paper-openspec <paper-file-url> barangay-routes
 $paper-openspec scope barangay-routes <paper-file-url>
@@ -64,6 +74,7 @@ When a higher scope introduces lower-level dependencies, design downward: create
 ## Preserve These Invariants
 
 - Treat Paper as the latest approved design state. Put module-owned canonical Component Frames on `<Module> / Components`, genuinely cross-module families on `Shared / Components`, and Screen Artboards on `<Module> / <Feature>`.
+- Keep `init` independent of OpenSpec Changes and read-only toward Paper, OpenSpec artifacts, tasks, and production code. Its only mutation is the Manifest Root's `PAPER.md`; require approval before retargeting or migrating an existing manifest.
 - Keep `lint` file-wide and strictly read-only. Report evidence-backed structural findings without converting them into parity gaps, inferred requirements, manifest edits, or automatic cleanup.
 - Require an explicit Paper file link. Never choose a target through the active file, recent-file order, or `list_files`.
 - Open the linked file before inspecting it and pass its canonical file ID to every subsequent Paper read or write that accepts `fileId`.
@@ -78,7 +89,7 @@ When a higher scope introduces lower-level dependencies, design downward: create
 - Compose screens from canonical component nodes by cloning or duplicating them. Do not redraw changed components independently inside screens.
 - Create screen artboards per materially distinct scenario and required viewport. Do not generate speculative breakpoints or states.
 - Let OpenSpec own business behavior, existing code and design tokens own the established visual language, and Paper own the intended composition under review.
-- Before analyzing, designing, reconciling, reviewing, or implementing visual surfaces, audit each affected workspace for shadcn configuration or compatibility. When configured, prefer its installed components, repository wrappers, and composition patterns; compatibility alone never authorizes initialization or registry changes.
+- Before inventorying repository mappings or analyzing, designing, reconciling, reviewing, or implementing visual surfaces, audit each affected workspace for shadcn configuration or compatibility. When configured, prefer its installed components, repository wrappers, and composition patterns; compatibility alone never authorizes shadcn initialization or registry changes.
 - Keep visual and non-visual requirements in the same coverage pass, but represent only visual requirements in Paper.
 - Require approval before changing proposal, spec, or design intent. Record approved implementation gaps in existing OpenSpec tasks; never create a separate parity artifact.
 - Add or reopen implementation tasks only after approval. Change a task checkbox to complete only after its implementation passes the required verification.
@@ -87,6 +98,13 @@ When a higher scope introduces lower-level dependencies, design downward: create
 - Load the Paper MCP guide before other Paper operations, review screenshots after meaningful changes, and always finish working on edited nodes.
 
 ## Review Discipline
+
+For initialization work:
+
+1. Report the Manifest Root, explicit Paper file link, and `init` slice; do not resolve an OpenSpec Change.
+2. Scan the complete live page hierarchy once, inventory only observed canonical current-state pages and surfaces, and exclude exceptional or structurally invalid surfaces with Lint Findings rather than repairing them.
+3. Preserve confirmed valid manifest entries, remove entries only after proving the corresponding canonical surface absent, and stop for approval before target replacement or schema migration.
+4. Write or refresh only root `PAPER.md`, then report inventory counts, retained, added, and removed entries, lint exclusions, and freshness or migration issues. Do not issue Design Alignment or Full Parity verdicts.
 
 For lint work:
 

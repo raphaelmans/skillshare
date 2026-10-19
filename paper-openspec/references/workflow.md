@@ -2,13 +2,17 @@
 
 Use this workflow for every slice.
 
+For `inventory-tree`, use only the target-resolution section below, then follow [inventory-tree.md](inventory-tree.md). Its standalone route bypasses change resolution, artifact validation, coverage matrices, scope, and resume. A request to explain arrangement conventions alone needs no live target.
+
 ## Resolve the Paper target
 
-Require one explicit Paper file URL or equivalent linked-file reference. Resolve it in this order:
+Resolve one Paper file URL or equivalent linked-file reference in this order:
 
 1. Use the Paper file link in the latest user request.
-2. Reuse exactly one unambiguous Paper file link from recent chat context.
-3. Ask the user for the Paper file link and stop when no link exists.
+2. For `init`, ask for the Paper file link and stop; initialization never reuses recent context or the manifest target.
+3. Reuse exactly one unambiguous Paper file link from recent chat context.
+4. For non-initialization work, use the single target from a valid root `PAPER.md` when repository context resolves one Manifest Root unambiguously.
+5. Ask the user for the Paper file link and stop when no link exists.
 
 Ask which link to use when multiple plausible Paper file links remain. Never use the currently open file, recently accessed files, `list_files`, or Paper selection as a target-selection fallback. A bare file ID does not satisfy this contract; ask for the Paper file link.
 
@@ -24,7 +28,7 @@ After resolving the target:
 
 ## Resolve the change
 
-Skip change resolution for an explicit `lint` invocation. Paper Lint is Paper-target-level: do not infer a change from recent context, inspect active-change status, or require a planning-complete artifact set. Continue with the lint reference after opening the linked Paper file.
+Skip change resolution for explicit `init` and `lint` invocations. Paper Initialization is project-level and Paper Lint is Paper-target-level: do not infer a change from recent context, inspect active-change status, or require a planning-complete artifact set. Continue with the selected reference after opening the linked Paper file.
 
 For every change-bound slice, resolve one change in this order:
 
@@ -35,13 +39,13 @@ For every change-bound slice, resolve one change in this order:
 
 Do not infer a change identifier from a Paper page name. Current-state pages are named for product modules and features and may be affected by many OpenSpec changes.
 
-Interpret a recognized first argument (`lint`, `scope`, `components`, `screens`, `sync`, `parity`, `implement`, `design`, or `all`) as a slice. Interpret any other first argument as a change identifier. Allow change-bound slices and changes in either supported form, such as `$paper-openspec scope barangay-routes` or `$paper-openspec barangay-routes sync`. Invoke lint as `$paper-openspec lint <paper-file-url>` without a change argument.
+Interpret a recognized first argument (`inventory-tree`, `init`, `lint`, `scope`, `components`, `screens`, `sync`, `parity`, `implement`, `design`, or `all`) as a slice. Interpret any other first argument as a change identifier. Allow change-bound slices and changes in either supported form, such as `$paper-openspec scope barangay-routes` or `$paper-openspec barangay-routes sync`. Invoke `inventory-tree`, `init`, and `lint` without a change argument.
 
 Select `implement` only when the current invocation names it explicitly or an approved Sync Plan explicitly includes code implementation and delegates to it. Treat either authorization as Paper Approval of the linked composition and permission to modify production code for the resolved change after preflight. Never infer it from recent chat, a bare invocation, `design`, `all`, or Sync Audit Approval.
 
 ## Verify the artifact set
 
-Skip this section for `lint`; lint does not require or validate an OpenSpec Change.
+Skip this section for `init` and `lint`; neither requires or validates an OpenSpec Change.
 
 Locate the repository root and `openspec/` directory. Prefer the installed OpenSpec CLI when available:
 
@@ -75,13 +79,15 @@ Inspect relevant routes, components, tokens, stylesheets, tests, and existing UI
 
 For `lint`, the Paper structural conventions define expected organization and live Paper is the object under audit. Use a valid Paper Manifest, current specs, and repository language only as non-authoritative evidence when page or surface ownership is ambiguous; do not evaluate requirement coverage or semantic alignment.
 
+For `init`, the same structural conventions determine what may enter the manifest. Inventory observed canonical state only. Do not infer missing requirements, repair Paper, reconstruct history, or issue a semantic alignment verdict.
+
 If no repository visual system exists, reuse a coherent existing Paper token system. If neither source exists, provide Paper's required design brief in chat before creating nodes. Never overwrite conflicting shared Paper tokens without explicit approval.
 
 ## Audit the UI component system
 
 For every selected slice that involves a visual component, screen, state, or interaction, read and follow `ui-system.md`. Run its audit once per affected owning workspace and reuse the result until material repository context changes.
 
-Apply the audit to `scope`, `components`, `screens`, visual rows in `sync` and `parity`, and visual tasks in `implement`. Do not run it for structural `lint` alone. The audit is repository evidence, not a new source of business intent. A Configured shadcn workspace establishes a preferred component vocabulary; a Compatible but unconfigured workspace establishes only an optional opportunity and authorizes no setup or dependency changes.
+Apply the audit to `init`, `scope`, `components`, `screens`, visual rows in `sync` and `parity`, and visual tasks in `implement`. During `init`, use it only for workspaces mapped to observed canonical surfaces and record repository UI-system context without proposing changes. Do not run it for structural `lint` alone. The audit is repository evidence, not a new source of business intent. A Configured shadcn workspace establishes a preferred component vocabulary; a Compatible but unconfigured workspace establishes only an optional opportunity and authorizes no setup or dependency changes.
 
 ## Build the coverage matrix
 
@@ -126,7 +132,7 @@ Use human product names from artifacts and established repository language. Do n
 
 1. Ensure Paper Desktop is running. If the MCP connection fails, ask the user to open Paper Desktop.
 2. Follow the already resolved Paper-target sequence: load the guide, call `open_file` with the supplied link, and retain the canonical file ID.
-3. For `lint`, inspect the complete page hierarchy and only the canonical frames needed by the lint reference. For change-bound slices, inspect tokens and the module component and feature pages named by the Page Ownership Plan using that file ID.
+3. For `init`, scan the complete page hierarchy once and inspect canonical current-state component and feature pages to the depth required by the initialization reference. For `lint`, inspect the complete page hierarchy and only the canonical frames needed by the lint reference. For change-bound slices, inspect tokens and the module component and feature pages named by the Page Ownership Plan using that file ID.
 4. During scope analysis, limit Paper reads to target validation and immediately relevant current-state page context. Do not audit other potentially affected surfaces or legacy pages without Sync Audit Approval, and never create pages, nodes, annotations, or comments.
 5. After valid Scope Approval for a design-producing route, reuse or create each approved current-state page: `<Module> / Components`, `Shared / Components`, or `<Module> / <Feature>` as applicable. Never create an OpenSpec change-slug page.
 6. When creating a page, pass the canonical file ID to `create_page`, then call `open_file` with the same file ID and returned page ID before editing. Repeat only for missing approved owner pages.
@@ -149,7 +155,7 @@ Treat bare invocation as `resume`, not as a destructive rerun:
 7. When Design Alignment is complete but required code evidence is missing, report Full Parity pending and provide the exact explicit `implement` invocation needed to authorize code changes.
 8. Report Full Parity complete only when every required source has evidence and no Gap or Pending Evidence remains.
 
-Explicit change-bound slices constrain the requested outcome, but always satisfy `scope` and required component dependencies for `screens`. `lint` remains independent and never triggers scope or change resolution. `all` evaluates the same approved scope, design, and parity state and fills gaps; it never includes `lint`, `implement`, or deletion and recreation of satisfactory artboards.
+Explicit change-bound slices constrain the requested outcome, but always satisfy `scope` and required component dependencies for `screens`. `init` and `lint` remain independent and never trigger scope or change resolution. `all` evaluates the same approved scope, design, and parity state and fills gaps; it never includes `init`, `lint`, `implement`, or deletion and recreation of satisfactory artboards.
 
 ## Handoff from parity
 
