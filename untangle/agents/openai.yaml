@@ -1,0 +1,6 @@
+interface:
+  display_name: "Untangle"
+  short_description: "Regenerate a messy message into what you meant"
+  default_prompt: "Use $untangle to rewrite this into what I mean: [paste text]."
+policy:
+  allow_implicit_invocation: false
