@@ -1,0 +1,6 @@
+interface:
+  display_name: "OpenSpec PR"
+  short_description: "Open, cross-check and reconcile OpenSpec pull requests"
+  default_prompt: "Use $openspec-pr open to raise a pull request for the OpenSpec changes on this branch."
+policy:
+  allow_implicit_invocation: false
