@@ -22,7 +22,8 @@ Distinguish a component's absence from a visual state. For example, a card hidde
 4. If the only satisfactory source is on a legacy change page, copy it once into the owner page and treat the new node as canonical. Preserve the legacy page unchanged.
 5. Put every required state and variation inside that single frame.
 6. Use concise state labels such as `Default`, `Filtered`, or `Disabled`; do not place requirements, prose annotations, acceptance criteria, or implementation notes in the frame.
-7. Build the canonical state first, then duplicate or clone it for variations and apply only the differences.
+7. Build the canonical state first, then duplicate or clone it for variations and apply only the differences. A duplicate lands directly after its source; reorder the states into reading order before review.
+   Draw an overlay, dialog, or menu state inside a container tall enough to show all of it, so the state is not clipped by a shorter screen behind it.
 8. Use repository/Paper tokens, available fonts, real domain copy, and existing component conventions.
 9. When shadcn is Configured, preserve the selected local component's composition rules, built-in variants, semantic colors, icon library, and accessibility-relevant structure.
 10. Keep component artboards fit to their content and visually separate variations without turning the frame into a specification sheet.

@@ -1,6 +1,6 @@
 # Approved Implementation
 
-Implement an active OpenSpec change only through this code-only workflow. Enter it when the user explicitly invokes `implement`, or when an approved Sync Plan explicitly includes code implementation and delegates here after its artifact updates validate. Treat either authorization as Paper Approval of the linked composition and permission to modify production code for every incomplete task in the resolved change, subject to normal approval requirements for dependencies, destructive actions, deployment, migrations, or other external side effects.
+Implement an active OpenSpec change only through this code-only workflow. Enter it when the user explicitly invokes `implement`, asks in plain words to apply or build the design in the codebase, or when an approved Sync Plan explicitly includes code implementation and delegates here after its artifact updates validate. Treat either authorization as Paper Approval of the linked composition and permission to modify production code for every incomplete task in the resolved change, subject to normal approval requirements for dependencies, destructive actions, deployment, migrations, or other external side effects.
 
 ## Build the task delivery map
 
@@ -32,6 +32,16 @@ Before changing code:
 5. Mark a task blocked when its owning requirement or dependency chain intersects a Gap, missing required artboard, or unresolved business or design decision. Propagate the blocker only through actual dependents.
 6. Report blocked dependency chains, route their OpenSpec/Paper reconciliation through `sync`, and continue every dependency-ready independent task. Parity may diagnose the gap but never reconcile it.
 
+When OpenSpec and Paper disagree on wording or a small visual decision, ask every such question in one batch, each with a recommended answer, then record the answers in the owning artifact before coding. Do not ask them one at a time as they surface.
+
+### Share the worktree
+
+Check `git status` before the first edit. Uncommitted work that this run did not create belongs to another session or to the user.
+
+- Leave it in place and keep it compiling. Where it reads something this change renames or removes, make the smallest edit that keeps it working and name that edit in the report.
+- Do not wait for another session's work to land unless the user says to wait. Overlap in one file is a reason to edit carefully, not to stop.
+- Stage and commit only the files this run changed.
+
 Do not silently choose OpenSpec over Paper or Paper over OpenSpec. Do not treat implementation authorization as approval to change proposal, specification, design intent, or task scope. A delegating Sync Plan may already authorize its exact artifact and task edits; anything outside that plan still requires approval. If a completed task lacks implementation evidence, treat it as a gap and route the exact reopen candidate through `sync` before doing that work.
 
 ## Route implementation guidance
@@ -54,10 +64,25 @@ For each dependency-ready task:
 
 Leave a blocked or failing task unchecked and retain its evidence. Continue with tasks that are independent of the blocker; do not execute dependent tasks or mark intent as completion. If verification reveals work absent from `tasks.md`, propose the exact add-or-reopen edit and wait for approval before expanding task scope.
 
-After task-status edits, preserve OpenSpec checkbox formatting and validate the change. Do not archive the change, commit, deploy, or run destructive migrations unless the user explicitly requests the separate action.
+After task-status edits, preserve OpenSpec checkbox formatting and validate the change. Tick each task in `tasks.md` as soon as it is verified, not in one pass at the end, so a session that is cut off resumes from the first unchecked task.
+
+Do not archive the change, commit, deploy, or run destructive migrations unless the user explicitly requests the separate action. When the request did ask to commit or push, do it after the checks pass, rerunning type, lint, and the affected tests after the final change or rebase.
+
+### When work is delegated
+
+When tasks are split across subagents or a workflow, give each one file-disjoint tasks, the Paper file ID and the canonical frames it implements, and the checks it must pass. Rerun type, lint, and the affected tests yourself on the merged result before ticking tasks or committing; a delegate's report is not verification.
 
 ## Finish with full parity
 
 After all currently implementable tasks have been processed, load the parity reference and run one full OpenSpec-to-Paper-to-code batch, including non-visual requirements. Route any code gap back through this implementation workflow only when an approved incomplete task covers it; otherwise route the required add-or-reopen edit through `sync` first.
 
 Consider implementation complete only when every task is verified and the final audit reports Full Parity complete, with no Gap or Pending Evidence across required sources. Otherwise report completed tasks, unchecked or approval-pending tasks, blocking dependency chains, failed checks, pending evidence, and the smallest next explicit action.
+
+## Closing report
+
+End every Implementation Run by stating each of these plainly, including the ones that did not happen:
+
+- Tasks verified out of the total, and which remain.
+- Whether the screens were seen rendered and compared with Paper. Passing tests are not a rendered review; when the UI was not run, say that the match with Paper is unverified.
+- Whether the work is committed and pushed, with the commit reference.
+- Each new migration and where it has been applied. When code that depends on a migration is pushed to a branch that deploys, and the migration is applied only locally, lead the report with that risk and the command or approval needed to apply it.

@@ -92,6 +92,18 @@ _Avoid_: Miscellaneous components, duplicate module components
 A non-production Paper page explicitly classified as Exploration or Archive and excluded from normal feature coverage while remaining ineligible to own canonical production components.
 _Avoid_: Unnamed draft, convention bypass
 
+**Exploration**:
+A change-free Paper pass that draws drafts, wireframes, content previews, variant comparisons, hi-fi concepts, or journey walkthroughs from an Exploration Brief, by default on its own Exceptional Page.
+_Avoid_: Design slice, canonical design, spike
+
+**Exploration Brief**:
+The user's stated direction and supplied sources that stand in for an Artifact Set during an Exploration: what to draw, at which fidelity, what varies, and what stays fixed.
+_Avoid_: Artifact Set, specification, scope report
+
+**Promotion**:
+The move from an Exploration to delivery: an OpenSpec Change is created from it, scope is approved once, and the needed nodes are copied into their canonical owner pages.
+_Avoid_: Implicit implementation, renaming the Exploration page
+
 **Design Scope**:
 The smallest experience boundary that fully contains the impact of an OpenSpec Change.
 _Avoid_: Requested slice, implementation size

@@ -44,7 +44,7 @@ Show an **Impact Matrix** for a Screen/Component Change and an **Experience Cove
 
 Keep the matrix in chat and working context. Never place it in Paper, persist it as a new OpenSpec artifact, or turn it into a specification frame. When a material gap originates in the artifacts, propose the owner-specific artifact edit and wait for approval.
 
-Block Paper design only when an unresolved item determines required behavior, navigation, permissions, data, state coverage, flow, or composition. List optional enhancements separately and do not add them to the design unless the artifacts are approved to include them. After an approved artifact correction, validate the change, rerun scope analysis, and obtain fresh Scope Approval.
+Block Paper design only when an unresolved item determines required behavior, navigation, permissions, data, state coverage, flow, or composition. List optional enhancements separately and do not add them to the design unless the artifacts are approved to include them. After an approved artifact correction, validate the change and rerun scope analysis. When the approved report displayed the exact corrections, that approval covers the scope as corrected; obtain fresh Scope Approval only when the rerun changes the route, the target pages, or the sequence.
 
 ## Recommend and sequence design
 
@@ -58,6 +58,8 @@ Before considering the approved scope complete, validate requirement coverage, u
 
 Report the Paper target, OpenSpec change, selected route and escalation evidence, matrix, material gaps, optional enhancements, and recommended sequence before any Paper mutation.
 
+Size the report to the route. For a Screen/Component Change with no material gap, give the target, the change, the families and states, the target pages, and the sequence in a short report, with the matrix limited to the affected rows. Lead every report with what needs the user's decision, and write gaps as a question with a recommended answer.
+
 Also report the component-system classification for each affected visual workspace, the Page Ownership Plan, and the potentially affected existing Component Families, Screen Artboards, states, flows, and required viewports that may have drifted because of the change. Derive this candidate set from OpenSpec and repository evidence without a detailed Paper audit. Ask whether to run the targeted Sync Audit; declining or deferring it must not prevent the approved current-state design sequence. A later explicit `sync` invocation resumes this audit independently.
 
-Treat an explicit `scope` invocation as analysis-only and stop after the report. For automatic preflight, stop and request Scope Approval. One approval authorizes the requested ordered design work while its source inputs remain unchanged outside the approved sequence: the artifact set, Paper target and pre-existing relevant design, requested boundary, and material repository context. Paper changes produced by the approved work do not invalidate it. A new conversation without unambiguous recent approval requires the analysis and approval again.
+Treat an explicit `scope` invocation as analysis-only and stop after the report. For automatic preflight, stop and request Scope Approval. A later `design`, `components`, or `screens` invocation in the same conversation, with unchanged inputs, is that approval. One approval authorizes the requested ordered design work while its source inputs remain unchanged outside the approved sequence: the artifact set, Paper target and pre-existing relevant design, requested boundary, and material repository context. Paper changes produced by the approved work do not invalidate it. A new conversation without unambiguous recent approval requires the analysis and approval again.

@@ -2,6 +2,8 @@
 
 Use this workflow for every slice.
 
+For `explore`, use the target-resolution, argument, and Paper-connection sections below, then follow [explore.md](explore.md). It bypasses change resolution, artifact validation, coverage matrices, and scope.
+
 For `inventory-tree`, use only the target-resolution section below, then follow [inventory-tree.md](inventory-tree.md). Its standalone route bypasses change resolution, artifact validation, coverage matrices, scope, and resume. A request to explain arrangement conventions alone needs no live target.
 
 ## Resolve the Paper target
@@ -16,11 +18,13 @@ Resolve one Paper file URL or equivalent linked-file reference in this order:
 
 Ask which link to use when multiple plausible Paper file links remain. Never use the currently open file, recently accessed files, `list_files`, or Paper selection as a target-selection fallback. A bare file ID does not satisfy this contract; ask for the Paper file link.
 
+A Paper file that was renamed but keeps the manifest's file ID is the same target: continue, mention the new name once, and update the recorded name during the next authorized manifest maintenance. An explicit request to point the manifest at a different Paper file is itself the retarget approval; show the retarget plan and apply it without a second stop.
+
 Do not begin artifact inspection or call Paper tools while the target is unresolved. If the supplied link is invalid, inaccessible, or does not identify a Paper file, ask for a corrected Paper file link and stop without modifying Paper or artifacts.
 
-After resolving the target:
+After resolving the target, check the Paper connection before reading artifacts or reporting anything:
 
-1. Load the `paper-mcp-instructions` guide as the first Paper tool call.
+1. Load the `paper-mcp-instructions` guide as the first Paper tool call. If the Paper tools are missing or the call fails, stop here. Say that Paper is not connected and how to fix it: open Paper Desktop with the file available, then reconnect the `paper` MCP server (`/mcp` in Claude Code), because the server connects only at startup or on reconnect. Do not run scope, ask for any approval, or produce a long report against a target that could not be opened; a report made before the reconnect has to be repeated after it.
 2. Call `open_file` with the supplied URL.
 3. Retain the canonical file ID returned by Paper.
 4. Pass that canonical file ID explicitly to every later Paper read and write that accepts `fileId`, including page creation, screenshots, exports, and `finish_working_on_nodes`.
@@ -39,9 +43,24 @@ For every change-bound slice, resolve one change in this order:
 
 Do not infer a change identifier from a Paper page name. Current-state pages are named for product modules and features and may be affected by many OpenSpec changes.
 
-Interpret a recognized first argument (`inventory-tree`, `init`, `lint`, `scope`, `components`, `screens`, `sync`, `parity`, `implement`, `design`, or `all`) as a slice. Interpret any other first argument as a change identifier. Allow change-bound slices and changes in either supported form, such as `$paper-openspec scope barangay-routes` or `$paper-openspec barangay-routes sync`. Invoke `inventory-tree`, `init`, and `lint` without a change argument.
+Interpret a recognized first argument (`inventory-tree`, `init`, `lint`, `explore`, `status`, `help`, `scope`, `components`, `screens`, `sync`, `parity`, `implement`, `design`, or `all`) as a slice. Interpret another first argument as a change identifier only when it matches a change directory under `openspec/changes/`. Read everything else as a plain-language request and route it by intent:
 
-Select `implement` only when the current invocation names it explicitly or an approved Sync Plan explicitly includes code implementation and delegates to it. Treat either authorization as Paper Approval of the linked composition and permission to modify production code for the resolved change after preflight. Never infer it from recent chat, a bare invocation, `design`, `all`, or Sync Audit Approval.
+| The request says | Route |
+| --- | --- |
+| draft, wireframe, sketch, preview, mock up, A/B, compare variants, "no artifacts" | `explore` |
+| hi-fi, design it, design the screens, for a resolved change | `design` |
+| hi-fi or design with no change, meant to be built | Create the change, then `scope` (see **When no change exists**) |
+| apply, build, sync to the codebase, put it into the codebase | `implement` |
+| accept, approve, approved, proceed, go ahead, with nothing else | Approval of the gate currently pending in this conversation |
+| audit, review, check against the spec | `parity`, or `lint` when the question is about structure |
+| status, recap, where are we, what happened | `status` |
+| help, how do I use this | `help` |
+
+A bare approval word is never a change identifier or a new slice. Apply it to the pending Scope Approval, Sync Approval, or displayed artifact correction, and continue. When nothing is pending, say so and report the current state instead of guessing.
+
+Words such as "commit", "push", or "run the migration" in the same request are instructions for after the slice completes; carry them out then under the repository's own rules. When the request is ambiguous between two routes that mutate different things, ask one short question naming both. Allow change-bound slices and changes in either supported form, such as `$paper-openspec scope barangay-routes` or `$paper-openspec barangay-routes sync`. Invoke `inventory-tree`, `init`, and `lint` without a change argument.
+
+Select `implement` only when the current invocation names it explicitly, asks in plain words to apply or build the design in the codebase, or an approved Sync Plan explicitly includes code implementation and delegates to it. Treat either authorization as Paper Approval of the linked composition and permission to modify production code for the resolved change after preflight. Never infer it from recent chat, a bare invocation, `design`, `all`, or Sync Audit Approval.
 
 ## Verify the artifact set
 
@@ -61,7 +80,15 @@ Require `isPlanningComplete: true`, or the compatible `isComplete: true`, for th
 - `design.md`
 - `tasks.md`
 
-Do not install OpenSpec or create missing artifacts. Stop and identify what is missing when the change is not 4/4.
+Do not install OpenSpec. Stop and identify what is missing when a named change is not 4/4.
+
+### When no change exists
+
+A design request with no matching change is not a reason to stop and ask.
+
+- When the request reads as a draft, wireframe, preview, or comparison, route to `explore`.
+- When the request is for canonical or hi-fi design that is meant to be built, create the change through the repository's own OpenSpec proposal workflow from the conversation, any exploration, and repository evidence. Announce the change name, validate it, run `scope`, and stop once at Scope Approval. The user reviews the new change and its scope in that single stop.
+- Ask only when it is unclear which of the two the user wants.
 
 Read `openspec/config.yaml` when present, then read the proposal, every delta spec, design, and tasks completely. Read affected current specs under `openspec/specs/` because delta specs describe changes rather than the entire current behavior.
 
@@ -111,8 +138,14 @@ Treat `components`, `screens`, `design`, `all`, and bare design resume as design
 
 1. Load the scope reference and classify the change from the artifacts, using Paper and repository evidence for current context.
 2. Report the selected Design Scope, escalation evidence, matrix, material gaps, optional enhancements, and ordered User Flows or Design Batches.
-3. Stop on a material gap and reconcile its owning artifact after approval. Validate, rerun scope, and require fresh approval after any artifact correction.
-4. When no material gap remains, stop and request Scope Approval. Do not interpret the design-producing invocation itself as approval.
+3. Stop on a material gap and reconcile its owning artifact after approval. Validate and rerun scope after any artifact correction, following the ask-once rules below.
+4. When no material gap remains, stop and request Scope Approval. A design-producing invocation is not approval of a scope report the user has not yet seen.
+
+Ask for each approval once:
+
+- A `design`, `components`, or `screens` invocation made after a scope report was shown in this conversation, with its inputs unchanged, is Scope Approval for that report.
+- When the report displays the exact artifact corrections for its material gaps, one approval covers both the corrections and the scope as corrected. Apply them, validate, and rerun scope silently. Ask again only when the rerun changes the route, the target pages, or the design sequence.
+- Never request the same approval twice because a session reconnected, Paper became reachable, or the skill was re-invoked.
 5. Reuse one unambiguous recent-chat approval across the requested ordered work while its source inputs remain unchanged outside the approved sequence: the artifact set, Paper target or pre-existing relevant design, requested boundary, and material repository context. Do not invalidate it for Paper changes produced by that approved work.
 
 Treat explicit `scope` as analysis-only and stop after its report even if approval already exists. Never persist approval in Paper or invent an OpenSpec approval marker. Scope Approval authorizes Paper design only; it does not grant Paper Approval for `implement`.
@@ -124,7 +157,7 @@ Also resolve a Page Ownership Plan in working context:
 - Place each module-owned canonical Component Family on `<Module> / Components`.
 - Place a Component Family on `Shared / Components` only when ownership and reuse genuinely cross module boundaries.
 - Place each Screen Artboard on `<Module> / <Feature>`.
-- Treat `Exploration / <Name>` and `Archive / <Name>` as exceptional noncanonical pages that cannot own current production components or screen coverage.
+- Treat `Exploration / <Name>` and `Archive / <Name>` as exceptional noncanonical pages that cannot own current production components or screen coverage. An exploration that the change promotes is a source to copy nodes from, not a target page.
 
 Use human product names from artifacts and established repository language. Do not derive page titles from the OpenSpec change identifier. Include every target page in the scope report and approval boundary.
 
@@ -137,8 +170,9 @@ Use human product names from artifacts and established repository language. Do n
 5. After valid Scope Approval for a design-producing route, reuse or create each approved current-state page: `<Module> / Components`, `Shared / Components`, or `<Module> / <Feature>` as applicable. Never create an OpenSpec change-slug page.
 6. When creating a page, pass the canonical file ID to `create_page`, then call `open_file` with the same file ID and returned page ID before editing. Repeat only for missing approved owner pages.
 7. Treat legacy change pages as noncanonical migration evidence. Preserve them unchanged. If an approved current design exists only there, copy only the needed node once into its current-state owner page, reconcile it there, and use the current-state node as canonical thereafter.
-8. Call `get_font_family_info` before the first typographic write in the session.
-9. Pass the canonical file ID to every operation that accepts `fileId`, write incrementally, screenshot after meaningful changes, apply targeted corrections, and call `finish_working_on_nodes` with that file ID when done.
+8. Before the first write, resolve the product font families and tokens from the repository and the Paper file, name them in the report, and call `get_font_family_info`. Use them from the first node.
+9. When drawing is delegated to subagents or a workflow, give each one the canonical file ID, the target pages, the font families and tokens, the canonical component nodes to clone, and the content source. A delegate that lacks them draws in defaults that then need bulk correction.
+10. Pass the canonical file ID to every operation that accepts `fileId`, write incrementally, screenshot after meaningful changes, apply targeted corrections, and call `finish_working_on_nodes` with that file ID when done.
 
 Do not create a new Paper file automatically. Do not switch to another file because it is open or recent. Do not use comment threads to store requirements, review notes, or discrepancies.
 
@@ -156,6 +190,14 @@ Treat bare invocation as `resume`, not as a destructive rerun:
 8. Report Full Parity complete only when every required source has evidence and no Gap or Pending Evidence remains.
 
 Explicit change-bound slices constrain the requested outcome, but always satisfy `scope` and required component dependencies for `screens`. `init` and `lint` remain independent and never trigger scope or change resolution. `all` evaluates the same approved scope, design, and parity state and fills gaps; it never includes `init`, `lint`, `implement`, or deletion and recreation of satisfactory artboards.
+
+## Status and help
+
+`status` and `help` are read-only and never mutate Paper, OpenSpec, code, or the manifest.
+
+For `status`, resolve the change and the Paper target without opening Paper unless a specific question needs it. Report in a few lines: the change and whether it is planning-complete and valid; the Paper target; which gate is pending, if any, and what approving it will do; design coverage as far as the manifest and this conversation establish it; tasks verified out of the total; whether work is committed, pushed, and migrated; and the single next command to run. Mark anything not checked as unknown instead of inferring it.
+
+For `help`, print the slices with one line each, which ones need a change, which ones stop for approval, and three example invocations that fit the current repository. Call no Paper tools.
 
 ## Handoff from parity
 

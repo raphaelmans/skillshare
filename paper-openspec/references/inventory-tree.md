@@ -19,7 +19,7 @@ Organize Paper by enduring product ownership, using human module and feature nam
 | `<Module> / Components` | All canonical Component Families owned by that module, one frame per family. |
 | `Shared / Components` | Canonical families whose ownership and reuse genuinely cross module boundaries. This is not a miscellaneous collection or a second home for module components. |
 | `<Module> / <Feature>` | Screen Artboards for that feature, each representing one material scenario at one viewport. |
-| `Exploration / <Name>` | Noncanonical experiments; excluded from the current production inventory. |
+| `Exploration / <Name>` | Noncanonical drafts, wireframes, content previews, variant comparisons, and journey walkthroughs, one exploration per page; excluded from the current production inventory. See [explore.md](explore.md). |
 | `Archive / <Name>` | Noncanonical retained designs; excluded from the current production inventory. |
 
 The slash is part of the page naming convention; a grouped report does not require creating nested Paper pages. Classify the reserved component and exceptional forms before the general module/feature form. A matching name alone does not prove valid ownership.
