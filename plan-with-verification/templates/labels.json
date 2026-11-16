@@ -1,0 +1,12 @@
+[
+  {
+    "name": "prototype",
+    "color": "FBCA04",
+    "description": "First iteration or throwaway. No live verification; closes noted \"not verified, prototype\"."
+  },
+  {
+    "name": "keeper",
+    "color": "0E8A16",
+    "description": "Feature that stays. Every journey is verified live, with proof posted, before close."
+  }
+]

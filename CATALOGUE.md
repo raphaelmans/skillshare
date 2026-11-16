@@ -7,7 +7,7 @@ skillshare install -p <source> [-s skill1,skill2]
 skillshare sync -p
 ```
 
-Global (this repo, synced to `~/.claude/skills` and `~/.agents/skills`) keeps the skills you use in any repo: grilling, pr, code-review, tdd, research, herdr-viz, skillshare, treg, agent-browser, untangle, the engineering flow (setup-matt-pocock-skills, to-spec, to-tickets, implement-spec, implement, triage, wayfinder, to-questionnaire, ask-matt), paper-design, and so on.
+Global (this repo, synced to `~/.claude/skills` and `~/.agents/skills`) keeps the skills you use in any repo: grilling, pr, code-review, tdd, research, herdr-viz, skillshare, treg, agent-browser, untangle, the engineering flow (setup-matt-pocock-skills, to-spec, to-tickets, implement-spec, implement, triage, wayfinder, to-questionnaire, ask-matt), the verification flow (plan-with-verification, which wraps to-spec and to-tickets, plus pstack's create-verification-skill and maintain-verification-skill), paper-design, and so on. App repos set up verification from `plan-with-verification/templates/README.md`.
 
 Token figures are on-demand body plus description, measured before removal.
 
@@ -68,4 +68,4 @@ Claude Code syncs your claude.ai account skills itself, into `~/.claude/skills/s
 
 ## Budget effect
 
-Global skillshare skills: 41, **~62.1K on demand and ~2.6K always loaded** (was ~231.9K and ~9.5K, budget 100K). `skillshare analyze` also counts Claude's native `synced/` folder in the `claude` target, which shows ~109.8K there.
+Global skillshare skills: 41, **~62.1K on demand and ~2.6K always loaded** (was ~231.9K and ~9.5K, budget 100K). `skillshare analyze` also counts Claude's native `synced/` folder in the `claude` target, which shows ~109.8K there. The verification flow added 3 skills on 2026-11-17: ~4.3K on demand and ~0.2K always loaded (all three are user-invoked).
