@@ -1,3 +1,0 @@
-# Resolve the Paper target explicitly or from the Paper Manifest
-
-Every Paper Initialization and Manifest Refresh requires an explicit Paper file link and records it in the committed Paper Manifest. If that link differs from an existing manifest target, the operation stops with a bounded retarget plan and requires explicit approval before replacing the target or inventory. Later non-initialization `$paper-openspec` runs prefer an explicit request link, then one unambiguous recent-chat link, then the manifest's single target; they never trust the active file, recent-file order, or `list_files`.
