@@ -4,91 +4,82 @@
     "agent-browser": {
       "source": "github.com/vercel-labs/agent-browser/skills/agent-browser",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:23.347909+08:00",
+      "installed_at": "2026-11-16T10:26:27.781713+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
-      "version": "548b159",
-      "tree_hash": "037e8078db4b20b4aa25c04f21c6de7d335ec449",
+      "version": "5338477",
       "file_hashes": {
-        "SKILL.md": "sha256:243eeaa5e9a42bb12d94d6af29a51b2c956546a16b1862282db1e5bd27315f8a"
+        "SKILL.md": "sha256:7d46deeb0101e84f8d70fd2e5cd18e3b6017edfb973607ff23e95e22c92ce73e"
       }
     },
     "copywriting": {
       "source": "github.com/coreyhaines31/marketingskills/skills/copywriting",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:02:36.388877+08:00",
+      "installed_at": "2026-11-16T10:26:36.014781+08:00",
       "repo_url": "https://github.com/coreyhaines31/marketingskills.git",
       "subdir": "skills/copywriting",
-      "version": "7868cb9",
-      "tree_hash": "13d216690bbbcb88e2fee9f3e2d8f5a5bbc4b338",
+      "version": "1f83744",
+      "tree_hash": "94ed1edf4f53c20cbc40f2ecc6f2228bcd66382f",
+      "commit": "1f837447b20bb6f0e72d87b80ece1c221c362c7d",
       "file_hashes": {
-        "SKILL.md": "sha256:ecdaabca28863d1472f79ba637842fdf4ac2fd9acc92b215ab7f152e757b2a33",
-        "evals/evals.json": "sha256:1cd7c27538b91d46c2b2cd007f2064922a4874ece1f2851b4bd844fe6f78a3e6",
-        "references/copy-frameworks.md": "sha256:f387b6ed4b510efa9f0d3c459f4898971c8b0176e8c34185040cb264eca50186",
-        "references/natural-transitions.md": "sha256:4ff23f8943af2f65b072f26f1c53ce55f19cc26d7be211c11cae8e34b43e859f"
+        "SKILL.md": "sha256:1db2f6e51f0492f5efc646b74576721852720dec388e58d0facd2b790c01bb4e",
+        "evals/evals.json": "sha256:ccec86052a0edd8646d0e50e63c08e0e971f443d8f6e9178843a1629f79efdb0",
+        "references/ai-tells.md": "sha256:b98c3a19b3a75c714d69e80a0076e4c07244b0e833c2ce81ff2631224fb7f7b2",
+        "references/copy-frameworks.md": "sha256:4db06c481a904be3e4571ad8f671532c97ec186ddf0fb8aee3e3a56ef8e3d441",
+        "references/natural-transitions.md": "sha256:9bd61b0de5be2c4de4ce130c68236b4f290b12737823827a458bb2b4c8584683"
       }
     },
     "defuddle": {
       "source": "github.com/kepano/obsidian-skills/skills/defuddle",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:02:40.860908+08:00",
+      "installed_at": "2026-11-16T10:26:47.568149+08:00",
       "repo_url": "https://github.com/kepano/obsidian-skills.git",
-      "subdir": "skills/defuddle",
-      "version": "a1dc48e",
-      "tree_hash": "db0b775af7e7d603f59fa2b67bdef615baf1a48f",
+      "subdir": "plugins/obsidian/skills/defuddle",
+      "version": "3981277",
+      "tree_hash": "69e781a19e8807f5d037723f1f994cfbe19573ff",
+      "commit": "398127736bd4ba42d767b1419fee1a927508370b",
       "file_hashes": {
-        "SKILL.md": "sha256:10673a4dc70a0a057612d443243ab7a5aa4abdd4a0fadc3f6eec5fd71ad5a971"
+        "SKILL.md": "sha256:58902192d0433d133a35efc1b46cc49ceef891a465f9fd4e709d6e824c9561fb"
       }
     },
     "domain-modeling": {
       "source": "github.com/mattpocock/skills/skills/engineering/domain-modeling",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:00.215215+08:00",
+      "installed_at": "2026-11-16T10:26:54.243233+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/domain-modeling",
-      "version": "9c9f36c",
-      "tree_hash": "05c3244ec75b7548bbc2b635b0624bb9f70369c3",
+      "version": "5863806",
+      "tree_hash": "ea30ee454ba264543dbe40737973b1a5afb9f0e6",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa",
       "file_hashes": {
-        "ADR-FORMAT.md": "sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
-        "CONTEXT-FORMAT.md": "sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597",
-        "SKILL.md": "sha256:9617041db9b0f6606ecf974e2061c83596b05059b5bb20ddb884c60f147c70e9",
+        "ADR-FORMAT.md": "sha256:944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0",
+        "GLOSSARY-FORMAT.md": "sha256:21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801",
+        "SKILL.md": "sha256:7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3",
         "agents/openai.yaml": "sha256:f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b"
       }
     },
     "find-skills": {
       "source": "github.com/vercel-labs/skills/skills/find-skills",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:05.13463+08:00",
+      "installed_at": "2026-11-16T10:27:00.670636+08:00",
       "repo_url": "https://github.com/vercel-labs/skills.git",
       "subdir": "skills/find-skills",
-      "version": "c6f69c6",
+      "version": "b716f9d",
       "tree_hash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "commit": "b716f9dc2ba36b6aa8f0080615e5a3a6caeac63b",
       "file_hashes": {
         "SKILL.md": "sha256:c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
-      }
-    },
-    "firecrawl": {
-      "source": "github.com/firecrawl/cli/skills/firecrawl-cli",
-      "type": "github-subdir",
-      "installed_at": "2026-08-18T16:04:33.190931+08:00",
-      "repo_url": "https://github.com/firecrawl/cli.git",
-      "subdir": "skills/firecrawl-cli",
-      "version": "870979e",
-      "tree_hash": "b241cf350214cc3aa3e9efe6922288a21c480306",
-      "file_hashes": {
-        "SKILL.md": "sha256:bd1f3eb9211721d71b4bd932f322a65f418f2bdc5bd6d7b587dad3ab4449a918",
-        "rules/install.md": "sha256:e8675643b85744cb5b40e43600d85fe86b412d1863c501b0ecba1e11a6eae9c4",
-        "rules/security.md": "sha256:ca9bf923a60147f5c4852ad04de37c5deb46e53e954da5ccf4982531a59d0ccb"
       }
     },
     "grill-me": {
       "source": "github.com/mattpocock/skills/skills/productivity/grill-me",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:00.197772+08:00",
+      "installed_at": "2026-11-16T10:28:03.342633+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/productivity/grill-me",
-      "version": "9c9f36c",
+      "version": "5863806",
       "tree_hash": "3df14e2d3a89459bf300614be9247e3ce74798f8",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa",
       "file_hashes": {
         "SKILL.md": "sha256:caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
         "agents/openai.yaml": "sha256:c061e39c3e0f9d865fb1b97556d485704af2a8a58f4b8221a8917a5c2074a32b"
@@ -97,11 +88,12 @@
     "grill-with-docs": {
       "source": "github.com/mattpocock/skills/skills/engineering/grill-with-docs",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:00.237928+08:00",
+      "installed_at": "2026-11-16T10:28:11.200666+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/grill-with-docs",
-      "version": "9c9f36c",
+      "version": "5863806",
       "tree_hash": "eedaf2562c83155115e9c649fa3ecaac2e10e81d",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa",
       "file_hashes": {
         "SKILL.md": "sha256:7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
         "agents/openai.yaml": "sha256:94cd0ab161fb468a836349f5ed482ba58ce8e709a05c57ce533d739dbd35cca9"
@@ -110,68 +102,79 @@
     "json-canvas": {
       "source": "github.com/kepano/obsidian-skills/skills/json-canvas",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:02:40.888357+08:00",
+      "installed_at": "2026-11-16T10:28:23.164765+08:00",
       "repo_url": "https://github.com/kepano/obsidian-skills.git",
-      "subdir": "skills/json-canvas",
-      "version": "a1dc48e",
-      "tree_hash": "9df7971db7ffebf96f2a207840b9f4765aa11b04",
+      "subdir": "plugins/obsidian/skills/json-canvas",
+      "version": "3981277",
+      "tree_hash": "d12c019d3e0601518a6c0d0cd3fe03f85d44e5b0",
+      "commit": "398127736bd4ba42d767b1419fee1a927508370b",
       "file_hashes": {
-        "SKILL.md": "sha256:97d1ae0728955c4203922753d5656890e5e4dd371b8306ea11884f9b510f1b85",
+        "SKILL.md": "sha256:4db4e69eea910b598c249e41bcdda85a70856348adaf11c35371198e258d50a6",
         "references/EXAMPLES.md": "sha256:f5ce15a4b74643122396265e8c37c828874a4005794de2aee7030662968768eb"
       }
     },
     "obsidian-bases": {
       "source": "github.com/kepano/obsidian-skills/skills/obsidian-bases",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:02:40.847377+08:00",
+      "installed_at": "2026-11-16T10:28:34.412447+08:00",
       "repo_url": "https://github.com/kepano/obsidian-skills.git",
-      "subdir": "skills/obsidian-bases",
-      "version": "a1dc48e",
-      "tree_hash": "f3330f27de4d7907ead57d0f48672f4d3280bb77",
+      "subdir": "plugins/obsidian/skills/obsidian-bases",
+      "version": "3981277",
+      "tree_hash": "a8caaad0163e85df56a2383c9ce23e0a98514766",
+      "commit": "398127736bd4ba42d767b1419fee1a927508370b",
       "file_hashes": {
-        "SKILL.md": "sha256:c0037f20926c7d8591cdd040365e4c0e4c0c4146386a506f28f241faee9a27d9",
+        "SKILL.md": "sha256:7a1659e2c00e7b74c8767002213dd977967ddd30dd15a7f33b693e783a4546e9",
         "references/FUNCTIONS_REFERENCE.md": "sha256:208fd63aead9bca1975626fea52605e6ab9434dc0529d923feb36b18b8877d3b"
       }
     },
     "obsidian-cli": {
       "source": "github.com/kepano/obsidian-skills/skills/obsidian-cli",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:02:40.823158+08:00",
+      "installed_at": "2026-11-16T10:28:57.101335+08:00",
       "repo_url": "https://github.com/kepano/obsidian-skills.git",
-      "subdir": "skills/obsidian-cli",
-      "version": "a1dc48e",
-      "tree_hash": "96254a554e480359de7b685571876f2e7f9ba57d",
+      "subdir": "plugins/obsidian/skills/obsidian-cli",
+      "version": "3981277",
+      "tree_hash": "7895d744e94b22beeac2174a3fbe0835420f3697",
+      "commit": "398127736bd4ba42d767b1419fee1a927508370b",
       "file_hashes": {
-        "SKILL.md": "sha256:b54257cdc0e5d04488b35b0c797bfe427b24359f0848d3c73924dcacf8da6358"
+        "SKILL.md": "sha256:28f66289b1cf1d245807766d4dafb6f5f76eadc986fe4a7f224da51f50aa7524"
       }
     },
     "obsidian-markdown": {
       "source": "github.com/kepano/obsidian-skills/skills/obsidian-markdown",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:02:40.807473+08:00",
+      "installed_at": "2026-11-16T10:29:09.237705+08:00",
       "repo_url": "https://github.com/kepano/obsidian-skills.git",
-      "subdir": "skills/obsidian-markdown",
-      "version": "a1dc48e",
-      "tree_hash": "4723197c6dc59abc29819da87863b1ac20b96095",
+      "subdir": "plugins/obsidian/skills/obsidian-markdown",
+      "version": "3981277",
+      "tree_hash": "9b92de4889980e903edfa2865f3401d08d782c3e",
+      "commit": "398127736bd4ba42d767b1419fee1a927508370b",
       "file_hashes": {
-        "SKILL.md": "sha256:7ad72e1f0a9081ed325e76b6402ad5de50a00e63e2341fd403a92f147234a007",
+        "SKILL.md": "sha256:f1c4ff5257d3f9743af797d755cabeef129f553704d5ff67ebf1239f9569f081",
         "references/CALLOUTS.md": "sha256:9912ec2e3f8711f65b8ceb82cc19cbffc5e6f8ccf2ab627e18926c522c383d8b",
         "references/EMBEDS.md": "sha256:63b6205507e28fb58cf200bc348a2b139e50ae739743e2e6316732148973cb7a",
-        "references/PROPERTIES.md": "sha256:392953b5838c3ab3df135b5a914f100ae7b95e4501b6a2e5c8dc63da3ac7558b"
+        "references/PROPERTIES.md": "sha256:f2d01b096a1c981a675e86b6a8c46bab271b278497646d465467b8120043b87c"
       }
     },
     "obsidian-vault": {
-      "source": "/Users/raphaelm/.Trash/agents-skills-2026-08-18-restore/obsidian-vault",
-      "type": "local",
-      "installed_at": "2026-08-18T16:04:33.227204+08:00",
+      "source": "github.com/mattpocock/skills/tree/f958fa17c1b62c3f7be38fc09512669acf6b64fc/skills/personal/obsidian-vault",
+      "type": "github-subdir",
+      "branch": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+      "installed_at": "2026-11-16T10:49:50.298388+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/personal/obsidian-vault",
+      "version": "f958fa1",
+      "tree_hash": "5fdd257588fefa400e8a0d505aac555a0b52311a",
+      "commit": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
       "file_hashes": {
-        "SKILL.md": "sha256:7bed1d552aa5e9345e493cd62cb13e65c5d829d153c349afdb2cb91c809fa6c4"
+        "SKILL.md": "sha256:7bed1d552aa5e9345e493cd62cb13e65c5d829d153c349afdb2cb91c809fa6c4",
+        "agents/openai.yaml": "sha256:4fe9849ac03b3226a8cb56c942a924446b136ee0db212aad3d073ebdf941d9e4"
       }
     },
     "shadcn": {
       "source": "/Users/raphaelm/Documents/Coding/startups/ugnayph-community/.skillshare/skills/shadcn",
       "type": "local",
-      "installed_at": "2026-11-15T23:50:42.926184+08:00",
+      "installed_at": "2026-11-16T10:29:09.681514+08:00",
       "file_hashes": {
         "SKILL.md": "sha256:deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4"
       },
@@ -180,23 +183,26 @@
     "show-me": {
       "source": "github.com/humanlayer/skills/plugins/show-me/skills/show-me",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:32.985962+08:00",
+      "installed_at": "2026-11-16T10:29:16.168492+08:00",
       "repo_url": "https://github.com/humanlayer/skills.git",
       "subdir": "plugins/show-me/skills/show-me",
-      "version": "3c26291",
-      "tree_hash": "0bdb821a21e793a4f6f82a7078c052154447e5cc",
+      "version": "4d69d20",
+      "tree_hash": "362200ac2fb3c17b765049444e88de73767e6d08",
+      "commit": "4d69d20f6e9b57b4fcf0d501ccfb1be961f0f329",
       "file_hashes": {
-        "SKILL.md": "sha256:bea6da70a58096730b9aeb0bae293ddf4726103a98efc9ce13c481619942a810"
+        "SKILL.md": "sha256:434a2346cc95e313b0d367d477dda2e23ba642dd2181757415a09500664af100",
+        "agents/openai.yaml": "sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
       }
     },
     "skill-creator": {
       "source": "github.com/openai/skills/skills/.system/skill-creator",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:16.948774+08:00",
+      "installed_at": "2026-11-16T10:29:23.393137+08:00",
       "repo_url": "https://github.com/openai/skills.git",
       "subdir": "skills/.system/skill-creator",
       "version": "49f948f",
       "tree_hash": "8bfb6b8774d223eea3e788cfdfa1e4209e5e2ae9",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
       "file_hashes": {
         "LICENSE.txt": "sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
         "SKILL.md": "sha256:a17383bfb1448637ac1f757ad891ddb9676fa30b0eff620200f0e1cbc0cc0d50",
@@ -210,12 +216,12 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-15T21:35:11.65422+08:00",
+      "installed_at": "2026-11-16T10:29:39.554308+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "b9ca16a",
-      "tree_hash": "7aa98b7995aa305b35f13c40c35d8f12f699b6f7",
-      "commit": "b9ca16a80efac07c4587d59e31cdec75eb4e1888",
+      "version": "43059a1",
+      "tree_hash": "7b9502a8f7a44dcfd7df04bdaa4dc272033a7992",
+      "commit": "43059a1428fcf06e028324a4ed609e53202e4b35",
       "file_hashes": {
         "SKILL.md": "sha256:e8e4e3def1eced4b4b349f642bb76d9850650dcce26461c17eba03e64b868aee",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
@@ -223,14 +229,14 @@
         "references/audit.md": "sha256:d2050d8d33c0829836bd9b37e68660a9b57163dec6cfefac13f5d1cb14025814",
         "references/backup.md": "sha256:d794b66b18120cfaae0dcb3773031a08426895fd618d02393337a1eb57f98f6f",
         "references/extras.md": "sha256:0845bb01f48b1ee6c91eee756319e301b224cec0f944b90dbee370934d0dbb57",
-        "references/hooks.md": "sha256:de0f7c4261adfc9cd1aaa409ff484676c694e45011458d5885afb9108619e07d",
+        "references/hooks.md": "sha256:8b86c9eb41e5f4b9d7036d2ddec4b364f59f496b211098bbbd11cd937370fe92",
         "references/init.md": "sha256:bd5206d3f614c6c32b1c930cc07dd93fe893bb041838af12b612f17f55af78e3",
         "references/install.md": "sha256:fdd11af011c9a6327495dfbdc49e18a99758edeed578d2c00a28d00ff45c0974",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
         "references/mcp.md": "sha256:5c1fab1311aba64e133b23ff5fd321015a49a3a23dd30946c18135e471ef4818",
         "references/memory-review.md": "sha256:e9fabed005f282c6702788bfe1a01aeca986184d48eadccf3ef0e9f4e465f5e3",
         "references/native-agents.md": "sha256:ad4696441bf8bb2b8bac327e9a409c637fa994b6e6ba92f3d7112ee0d71006e0",
-        "references/plugins.md": "sha256:2d890dd1b796d4be706944e905706376555f689c3620f8258e64815c3d40d8c3",
+        "references/plugins.md": "sha256:cb7f6a4fed0097206df5b5db30e9ea97a6c9dda794874849c43e9bb2ffd4b9af",
         "references/status.md": "sha256:a63b2935f280f47dbdcd790c97149173f913710319d61d3e0cbf911e9528ee8b",
         "references/sync.md": "sha256:aa2740ae9f92181e318f077ae85250cc8041914dfea67123975de30730276511",
         "references/targets.md": "sha256:336a1e874696111c27102f07d9c0f5299d0856fc47707f49c4d355383c12f822",
@@ -238,65 +244,64 @@
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }
     },
+    "synced/a0678ac0-a3a5-4395-8254-7885992bcb86_255ae9f1-c500-4b9f-9be8-63cc17e624fb/skill-creator": {
+      "source": "github.com/openai/skills/skills/.system/skill-creator",
+      "type": "github-subdir",
+      "group": "synced/a0678ac0-a3a5-4395-8254-7885992bcb86_255ae9f1-c500-4b9f-9be8-63cc17e624fb",
+      "installed_at": "2026-11-16T10:29:31.567342+08:00",
+      "repo_url": "https://github.com/openai/skills.git",
+      "subdir": "skills/.system/skill-creator",
+      "version": "49f948f",
+      "tree_hash": "8bfb6b8774d223eea3e788cfdfa1e4209e5e2ae9",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "file_hashes": {
+        "LICENSE.txt": "sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "SKILL.md": "sha256:a17383bfb1448637ac1f757ad891ddb9676fa30b0eff620200f0e1cbc0cc0d50",
+        "agents/openai.yaml": "sha256:fcc3ba02bdf8d6df1f891637cf5336d2d7ef87bb8910fa622bd150c8e0d4c55b",
+        "references/openai_yaml.md": "sha256:9fb5928b7f4a746fdb39df503ebbd7a659d5e64b47f85a60626aa1a03fd76b17",
+        "scripts/generate_openai_yaml.py": "sha256:b8f6be33a9d72dd7a8da02e7a9fffea23dc79e94862e6dd6358b57a8899d8f73",
+        "scripts/init_skill.py": "sha256:bcb8982d3f033a094f2f1be43123ac8537e2562d25d8ba4d8ef2196ae514d96d",
+        "scripts/quick_validate.py": "sha256:6cc9dc3199c935916cf6f73fcbbbb0e3bb1b58c8f5109fefa499978908164f51"
+      }
+    },
     "turborepo": {
       "source": "https://github.com/vercel/turborepo/skills/turborepo",
       "type": "github-subdir",
-      "installed_at": "2026-08-19T15:08:38.039693+08:00",
+      "installed_at": "2026-11-16T10:29:47.621781+08:00",
       "repo_url": "https://github.com/vercel/turborepo.git",
       "subdir": "skills/turborepo",
-      "version": "fc02d72",
+      "version": "ef00d80",
+      "tree_hash": "a1bae26a81bbc79e6eb14b4e7ec4d36694e6e94a",
+      "commit": "ef00d80db2f08d610582dbcd592064c2c4247d45",
       "file_hashes": {
-        "SKILL.md": "sha256:150b2d2dfbc7f1e6c1990827a8debd9bd2756320c8a0c439f69f7b54cdd57ced",
-        "command/turborepo.md": "sha256:ad4437d5dd02aa30835c556504ef836f43c29e660d9ed7dd5865b7daf3b8b4fd",
-        "references/best-practices/RULE.md": "sha256:ab7d339168386107d0a6b9259f2e6586b1526d53975682a08442babfa1b7bb58",
-        "references/best-practices/dependencies.md": "sha256:422cbba88be554e857fd2bce4bd60983198bfd48e253f8b57ac833741077f3d3",
-        "references/best-practices/packages.md": "sha256:eb393cfc4e2824612e862db5d30868948952e22c48b9885b20ef43f5d982732e",
-        "references/best-practices/structure.md": "sha256:4ff5b82b785d83852f337e5994befe6534d99b9db862dbff8b7d950cf00d3369",
-        "references/boundaries/RULE.md": "sha256:70d66f5ba31c0caa788b68b99b8f010eb71d1ab1a55d1d6faec024d4a86afb56",
-        "references/caching/RULE.md": "sha256:cb68d066937eb4a91999236d2afb685b623ae641e44c8e839cb993b4c8f66527",
-        "references/caching/gotchas.md": "sha256:4a301996476b0b140a7ff434767c6f9b1ac91559222706cf56987d520fdcf2ab",
-        "references/caching/remote-cache.md": "sha256:aadde0562fd51fb6593c890af25851419730b714d84e9477d8c190479d31e530",
-        "references/ci/RULE.md": "sha256:f78461824b21955f702c24a4fbf287c71a4f9eec79d79e9fc0fd11b014a2eaf1",
-        "references/ci/github-actions.md": "sha256:050b34c6488c08a5738afa6eb5060cc0aee3208bb85f924f08a8727a0eb3c80e",
-        "references/ci/patterns.md": "sha256:fdaa9fa17dae3f4849efa9a9312dfb2929181609b0ed428224db03bb4fcbe6d7",
-        "references/ci/vercel.md": "sha256:cf47de0da926980841aebd9cbfc649f49e0d18a108afc622386825705538b946",
-        "references/cli/RULE.md": "sha256:7f323ad405086b17fbafa516a9feec597ad94323492954329e9aafb5b51f8e18",
-        "references/cli/commands.md": "sha256:2fcaae0230e350340655787b5c9116f535bc7f1abaa317111d492226cdb139c4",
-        "references/configuration/RULE.md": "sha256:0d977a8eb3f247c9d5dc134acbf5997ce2acf1779108e9a76b8315e85235ea0e",
-        "references/configuration/global-options.md": "sha256:a9cda5ba17756d82944b8f085f41790fcfcae26554ab5637476394c868c141a7",
-        "references/configuration/gotchas.md": "sha256:5623c00a9b0ff15fe4e769a7cd5a447d3c4af356fbe053799523353976812d38",
-        "references/configuration/tasks.md": "sha256:d41b3a6efc6852206aa2bf39778727fdc2f9dd84521b13702a403cb18f84fd55",
-        "references/environment/RULE.md": "sha256:6c950440c2a7ab69cf006ad85f62e360352d705eb4593ab975c73055782217e5",
-        "references/environment/gotchas.md": "sha256:91196dc9169b1f4bc297a9473bd500ddc66f2e0f8438acbc98af6399dbc5b299",
-        "references/environment/modes.md": "sha256:e62247076f8b84d6897ab3ec835642736074fc36da10980ede69c23c1c923fd8",
-        "references/filtering/RULE.md": "sha256:2d73e0190586e233cce7dd4599eb368d7d8f846fdc68f0d19ce06a7e3ec6166c",
-        "references/filtering/patterns.md": "sha256:c03f856b8c76f137a1ef31efdbc9796b18c0a2b096e48aff6ce2ee5ff4cac4f0",
-        "references/watch/RULE.md": "sha256:9f0706f10dc7cf3a9115214f31195d6dadf237966cba13fe7ff8b264ba993c2b"
+        "SKILL.md": "sha256:e475e520f1822f0de4ca5fbbfd37906949db67d35b038f2b8a76ef4c95c13c53"
       }
     },
     "wait-what": {
       "source": "github.com/mattpocock/skills/skills/productivity/wait-what",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:00.226844+08:00",
+      "installed_at": "2026-11-16T10:30:03.937088+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/productivity/wait-what",
-      "version": "9c9f36c",
-      "tree_hash": "6abe708f1bf253158a037ac49faea2944e2809dc",
+      "version": "5863806",
+      "tree_hash": "c8b050e6b8c711be1a9008ceacb2126914f0763e",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa",
       "file_hashes": {
-        "SKILL.md": "sha256:8923f7df1a0d1b138281658e134caa4bf1c618d2876a2323b19acdfdffebc024",
-        "agents/openai.yaml": "sha256:3ec661af8fc7063b650518c95ab775bbeabaefce38b89acaf6da2f749168f37e"
+        "SKILL.md": "sha256:d961bb37defd975c539427edb8f450cdbccdcdd552e213c1ece46676a7970905",
+        "agents/openai.yaml": "sha256:b41faadf741d51e4ea184148b2d1854d93f947aaf754c7844f70a00f04194999"
       }
     },
     "watch-video": {
       "source": "github.com/coreyhaines31/makerskills/skills/watch-video",
       "type": "github-subdir",
-      "installed_at": "2026-08-18T16:03:28.519889+08:00",
+      "installed_at": "2026-11-16T10:30:12.388178+08:00",
       "repo_url": "https://github.com/coreyhaines31/makerskills.git",
       "subdir": "skills/watch-video",
-      "version": "33cb387",
-      "tree_hash": "20155a983c06e25255e29dc8d7862747c1651305",
+      "version": "98e0ad3",
+      "tree_hash": "17dce366cc5ed9829a3f46b9eb1b491fc8989ba0",
+      "commit": "98e0ad3e268fe60e555afee51c3d9edd0ea6cdc7",
       "file_hashes": {
-        "SKILL.md": "sha256:11c3638c9872be55bf0062cf635feceef5435fae0639842b9656147203f33ddf"
+        "SKILL.md": "sha256:b9fe57a472eecffd727c64d03f4768be36608db89fea8638bcd7bf3773a0fa6b"
       }
     }
   }
