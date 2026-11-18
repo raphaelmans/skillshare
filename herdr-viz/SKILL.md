@@ -36,6 +36,16 @@ Write markdown. The title is `--title`, else the first `# heading`.
 
 The caption shows under the embed. Keep the document focused: a title, a short intro, then sections that each carry an embed or a table.
 
+### Diagrams that read in the pane
+
+The artifact pane sits beside the terminal and is narrow, often 500 to 700px. A diagram wider than that is shrunk until its text is small, and past 60% it scrolls sideways. The person can expand any embed into a window to zoom in, but it should read without that.
+
+- Use as many diagrams as the topic needs. Several small ones, each under its own heading, read better than one that holds everything.
+- Keep a diagram to about 12 nodes. Split a bigger one by stage, layer or actor.
+- Draw chains top to bottom (`flowchart TD`). Use `LR` only for 4 or fewer nodes in a row.
+- Keep node labels short (a few words) and put the detail in the prose under the diagram.
+- A sequence diagram grows wider with every participant: keep to about 5.
+
 ## How to work
 
 1. Write the document and its embed files to a scratch folder, not the user's repo, unless they asked for the files.
