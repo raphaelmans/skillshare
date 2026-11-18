@@ -17,7 +17,7 @@ A Paper link. No spec, tracker config, or Gate.
 
 1. [open-paper-file](../steps/open-paper-file.md)
 2. [read-the-ui-system](../steps/read-the-ui-system.md) for the owning workspace, when one exists.
-3. State the Sketch Brief in a few lines: what is drawn, which surfaces and viewports, the fidelity, what varies, what stays fixed, and the target page. Draw in the same turn. Ask one question first only when the request contradicts itself on what gets drawn ("everything" against "one screen").
+3. State the Sketch Brief with its surfaces, viewports, fidelity, variations and target page. When a partial reference leaves the intended scope unclear, use the scope question in [confirm-design-intent](../steps/confirm-design-intent.md). Draw once the boundary is clear.
 4. [draw](../steps/draw.md) on the Sketch Page, following the rules below.
 
 ## Where it goes

@@ -12,12 +12,12 @@ Design and Reconcile run the same assessment themselves; this Job is for asking 
 
 ## Needs
 
-A Ready Spec and a Paper link.
+A Paper link and either a Ready Spec or a named redesign boundary with evidence of existing behavior. Closed specs can supply baseline evidence for a redesign.
 
 ## Steps
 
 1. [open-paper-file](../steps/open-paper-file.md)
-2. [find-the-spec](../steps/find-the-spec.md)
+2. [find-the-spec](../steps/find-the-spec.md) for spec-bound work. For a redesign, [map-redesign-coverage](../steps/map-redesign-coverage.md) to identify the affected workspaces and surfaces.
 3. [read-the-ui-system](../steps/read-the-ui-system.md) for each affected workspace.
 4. [assess-design-scope](../steps/assess-design-scope.md)
 

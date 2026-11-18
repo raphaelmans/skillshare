@@ -39,19 +39,19 @@ The Job that creates or refreshes the Paper Manifest.
 _Avoid_: Init, initialization pass
 
 **Size-up**:
-The read-only Job that classifies a Spec's Design Scope and reports gaps.
+The read-only Job that sizes the design work for a Spec or a named redesign and reports gaps.
 _Avoid_: Scope, scoping slice
 
 **Design**:
-The Job that draws or updates a Spec's canonical components and screens in Paper.
+The Job that draws or updates canonical components and screens from a Spec or an evidenced redesign boundary.
 _Avoid_: Design slice, components + screens
 
 **Reconcile**:
-The Job that makes a Spec and Paper agree by changing whichever side is behind.
+The Job that reconciles a Spec and Paper, or syncs an implemented inference from its inventory entry to Paper.
 _Avoid_: Sync, to-paper, from-paper
 
 **Compare**:
-The read-only Job that checks a Spec, Paper, and code against each other.
+The read-only Job that compares accepted requirements, Paper and code within the requested boundary. A redesign can use an evidenced product baseline.
 _Avoid_: Parity, review, audit
 
 **Build**:
@@ -59,7 +59,7 @@ The Job that checks Paper against the Tickets and Relays to the implementing ski
 _Avoid_: Implement, implementation slice
 
 **Write-up**:
-The Job that reads chosen Paper components or screens and Relays them toward code, a Spec, or Tickets.
+The Job that reads the chosen surfaces and their agreed context, sizes the work and prepares a Relay to code, a Spec or Tickets.
 _Avoid_: Reverse-spec, extract, Paper-to-spec, promote
 
 ### Specs and tickets
@@ -73,7 +73,7 @@ An open Spec whose Problem Statement, Solution, and User Stories (the sections o
 _Avoid_: Planning-Ready, 4/4 complete
 
 **Design Section**:
-The `## Design` section of a Spec, holding only Paper links and the Design Scope; paper-design writes it after approval.
+The `## Design` section of a Spec, holding Paper links and the Design Scope. For a redesign it also holds or links the coverage record. Paper-design writes it after approval.
 _Avoid_: Design notes, spec page, Paper annotations
 
 **Ticket**:
@@ -117,7 +117,7 @@ _Avoid_: Scope Approval, build intent, active-canvas approval
 ### Paper surfaces
 
 **Paper Target**:
-The Paper file selected explicitly for the current request or resolved from one unambiguous Paper Manifest fallback.
+The Paper file identified by the current request, its referenced tracker or inventory record, related conversation, or one unambiguous Paper Manifest fallback.
 _Avoid_: Active file, current canvas, recent file
 
 **Component Family**:
@@ -205,7 +205,7 @@ _Avoid_: Canonical ID, source of truth, unnamed locator
 ### Scope
 
 **Design Scope**:
-The smallest experience boundary that fully contains a Spec's impact: a Surface Change, User Flow, User Journey, or Product Overhaul.
+The smallest experience boundary that contains the requested change and its effects. Its levels are Surface Change, User Flow, User Journey and Product Overhaul.
 _Avoid_: Requested slice, implementation size
 
 **Surface Change**:
@@ -239,11 +239,11 @@ An evidence-backed page-arrangement violation reported by Check-structure, with 
 _Avoid_: Lint Finding, Design Drift, automatic fix
 
 **Design Alignment**:
-Agreement between a Spec and its Paper Target across every applicable Visual Requirement.
+Agreement between the accepted requirements and the Paper Target across every applicable Visual Requirement. A redesign can use its evidenced baseline before a migration Spec exists.
 _Avoid_: Full Agreement, design complete
 
 **Full Agreement**:
-Agreement across the Spec, Paper Target, and code with no Gap or Pending Evidence.
+Agreement across the accepted requirements, Paper Target and code in the named scope, with evidence for every required behavior and composition. Equivalent token use or responsive reflow that preserves hierarchy can qualify as Close.
 _Avoid_: Full Parity, visual match
 
 **Pending Evidence**:
@@ -255,7 +255,7 @@ A missing or contradictory required behavior, state, action, visibility rule, na
 _Avoid_: Minor drift, preference
 
 **Design Drift**:
-A meaningful difference between a Spec and its Paper Target that may need reconciling even when both are coherent on their own.
+A meaningful difference between intended, drawn, or implemented design. When an inferred surface is implemented ahead of Paper, the design inventory records the affected surface and the direction of the later sync.
 _Avoid_: Pixel difference, implementation bug
 
 **Drift Item**:
@@ -263,7 +263,7 @@ One independently fixable piece of Design Drift, with evidence, the source that 
 _Avoid_: Whole-page mismatch, audit note
 
 **Drift Direction**:
-Which side of one Drift Item should change: Spec to Paper, a Paper-to-Spec candidate, or unresolved; inferred per item, never chosen for a whole run.
+The source and destination for one Drift Item. Directions include Spec to Paper, a Paper-to-Spec candidate, and code to Paper for an implemented inference recorded in the inventory. Conflicting evidence can leave direction unresolved.
 _Avoid_: Sync Direction, command option, run-wide mode
 
 **Reconcile Plan**:

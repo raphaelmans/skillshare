@@ -72,6 +72,7 @@ On refresh:
 - Keep entries confirmed against live Paper and the repository.
 - Update only entries whose evidence changed.
 - Add new valid canonical entries.
+- Preserve any **Paper sync pending** inventory entries across refreshes. Structural discovery alone cannot establish visual agreement or resolve those entries.
 - Remove an entry only when the complete scan proves its surface absent. A lookup failure, rename, or stale locator is not proof; match by human names first.
 - Leave surfaces with Structure Findings out of the inventory.
 - Keep unrelated user-written content when schema ownership stays clear; otherwise stop for Manifest Migration approval.

@@ -1,0 +1,70 @@
+{
+  "skill_name": "paper-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build UI ticket T12. Earlier chat discussed an unrelated Storefront file. T12 is a child of open Claims spec S4. S4 links the Claims v2 Paper file. The Design Ticket is closed. T12 links the Claims / Detail page and its uniquely resolved Approve frame. It names release r1, viewer read access, reviewer approval and return to the filtered queue. No blockers. The owner reserves browser QA and forbids creating or running tests. What is the handoff?",
+      "expected_output": "Build T12 only using S4 and Claims v2. Open the specific frame. Carry roles, action, return, r1, integrated reachability check and verification limits into /implement T12. No scope question, whole-spec port or rendered parity claim."
+    },
+    {
+      "id": 2,
+      "prompt": "Port this selected hi-fi detail panel. The repository opens the same panel from the customer list and account search. Neither host is drawn. There is no further scope instruction. Give the next response to the user.",
+      "expected_output": "Inspect both hosts. Ask one concrete scope question naming the hosts, recommend a scope, and wait before extending their designs. The user need not enumerate dependencies."
+    },
+    {
+      "id": 3,
+      "prompt": "Use the approved panel as the visual foundation for the customer list and port the flow. Account search also opens it. The decision record limits visual changes to the customer list. Its list/detail arrangement follows an established product pattern. Both entry points preserve filters and focus on return. Implementation is requested, fits one session and has no spec. Give the implementation handoff.",
+      "expected_output": "Treat the panel as supplied and list as inferred, choose code-first, include entry/active/return, check functional effects in search, limit visual changes to the list. Relay /implement with reference, baseline and inventory instructions. Drift starts as planned and becomes pending Paper sync only once implemented."
+    },
+    {
+      "id": 4,
+      "prompt": "Use this high-fidelity editing control to design the missing surrounding flow before implementation. At the same required viewport, both a nonmodal inline review and a separate approval step fit the decision record. They differ in navigation and recovery, and would be expensive to reverse. Baseline r8 includes retry, cancel and role-dependent actions. What should happen next?",
+      "expected_output": "Use Paper first. Draw or plan the competing compositions in the actual host for review under the existing approval, preserve real roles, recovery and return. Keep the supplied control authoritative. Do not relay straight to implementation."
+    },
+    {
+      "id": 5,
+      "prompt": "Reconcile our new approvals flow across all related features. An accepted rule changed pending to mean awaiting my decision. A list query, a separately implemented sidebar count and a mobile summary all express that rule. Billing uses the same badge primitive for invoice due dates. Scope and direction are already agreed. What belongs in the plan?",
+      "expected_output": "Trace the semantic rule through list, sidebar and mobile, correct evidenced mismatches, and preserve billing's distinct meaning. Separate the affected business states from visual reuse, with one owner for genuinely shared work."
+    },
+    {
+      "id": 6,
+      "prompt": "Finish the new Paper design for Intake and Review, then prepare parallel development. Only an old discrepancy spec is closed. The audit says upload works and a reviewer can retry failed imports. A signed decision retired bulk reset. The selected new prototype contains upload and review screens with a shared navigation rail, but no retry state or standalone rail frame. The three existing tickets address wording only. The prototype uses new typography. Explain the next plan and its later handoff.",
+      "expected_output": "Use the named product boundary even without an open migration spec. Inventory the baseline and target independently. Retain retry, respect the retirement, account for both visual ports and the rail once, use the target typography, and complete missing Paper work under approval. Carry linked designs and criteria into a new spec and tickets. Existing wording tickets do not establish readiness."
+    },
+    {
+      "id": 7,
+      "prompt": "Are both modules ready for parallel implementation? S1's design ticket is closed and its detail ticket has a verified reference and retained criteria. S2's Design Ticket is open. The requested target also includes an unowned global sidebar. An ingestion-service ticket has no UI dependency. All delivery tickets have ready-for-agent labels.",
+      "expected_output": "No whole-scope readiness. Identify S2's approval and the unowned sidebar separately. Report S1 or service work only where real dependencies permit. Assign or relay unowned work once. Triage labels do not grant design approval."
+    },
+    {
+      "id": 8,
+      "prompt": "Review the integrated port. In release R, Viewer could open Records from the sidebar. At merge M the old component exists but the only nav link is now under canEdit. The approved new header has two regions, while M still renders the old one-region header. A new retry action promised by the spec has no handler. A separately approved code-first history panel works at M and has no Paper frame. An old export was explicitly retired in decision D7. There is no code or rendered evidence for the mobile host. Source inspection only; the owner will do production QA.",
+      "expected_output": "Classify the lost viewer path as a regression, the old header and unbuilt retry as implementation gaps, the history panel as Paper sync pending, export as accepted retirement, and mobile as unverified. Cite R and M, require repair and recheck for the regression, keep rendered verification pending and make no Full Agreement claim."
+    },
+    {
+      "id": 9,
+      "prompt": "Sync the 'history panel — Implemented, Paper sync pending' inventory entry to Paper. The underlying spec and delivery tickets closed last month. The code and supplied reference agree on the panel's actions. I approved the displayed plan to draw the inferred host and update that same row. A different page is currently active in Paper.",
+      "expected_output": "Use Reconcile's inventory path, the recorded target and actual owner page ID, then check the new node against implemented behavior and composition. Resolve only the same row once supported. Leave the closed product scope closed and keep any unverified axes pending."
+    },
+    {
+      "id": 10,
+      "prompt": "Just compare the application with this Paper file. The reachable viewer screen has an evidenced permission state missing from Paper; an admin action is shown in Paper but is absent from the approved product scope. I have given no instruction to draw or edit the tracker.",
+      "expected_output": "Compare read-only. Report the missing visual state and the unsupported action or decision separately. Do not draw, edit, relay to implementation, or infer a new permission."
+    },
+    {
+      "id": 11,
+      "prompt": "Draft two copy variants for the hint 'Choose a new workspace name' in the Rename workspace step for admins, on a Sketch page only. The manifest resolves the target Paper file. There is no spec and nothing has been built for this step. The existing brand, layout and surrounding product are explicitly fixed.",
+      "expected_output": "Sketch the copy alternatives in scope on a Sketch page. No baseline for nonexistent behavior, no scope re-interview, migration inventory, canonical write, approval ticket, or implementation."
+    },
+    {
+      "id": 12,
+      "prompt": "Turn these selected screens into tickets. The feature spans two sessions. Open parent S48 already exists, names the target file and has no tickets. At release r17 a viewer can open an item from the queue and read it; a reviewer entering from search can decide the item and return to the filtered results. The owner's rule is source inspection only, with browser QA retained by the owner. The target page URL is https://paper.example/f/Q/reviews. The two frames are both named Detail, one beneath Queue / Read and one beneath Search / Decide. The active file is unrelated. The tracker is configured. Give the ticket text and next action for a fresh implementer.",
+      "expected_output": "Write-up to /to-tickets on the existing parent. Resolve original target and exact framed nodes using their parent paths; leave unresolved identity pending. Preserve baseline, roles and scope in published tickets, then link actual IDs, design approval and blockers. Do not create a duplicate spec or implement from a base file link."
+    },
+    {
+      "id": 13,
+      "prompt": "Build T30, the first-ever saved-view naming flow. It is the only UI ticket in open spec S9. The signed-off Paper frame is https://paper.example/f/Q/views with the unique path Search / Save view > Name view. Only the naming dialog gets the new treatment. Its approved new requirement is that analysts can save a name and see it in their list of views. At release r4 an analyst can cancel dialogs and return to filtered search, and a reader can still use search without write controls. The existing search host and the unrelated Rename workspace screen keep their designs. The Design Ticket was resolved and T30 has no other blockers. What does the implementer receive?",
+      "expected_output": "Build only T30, open the named frame, and pass the new save-and-list outcome separately from retained search and cancellation criteria at r4. Check the relevant host and both roles after integration. Keep the visual treatment scoped to the dialog, preserve host presentation, and avoid a new scope or approval question. Relay /implement T30."
+    }
+  ]
+}
