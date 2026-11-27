@@ -12,7 +12,7 @@ Follow wayfinder's **Chart the map**, with four changes.
 
 - The live grilling covers what only the owner can say: the destination, who it is for, where scope ends, and any reserved decision already in view. Fanning out across the rest of the space is your legwork.
 - Before the owner confirms the Destination, give your **case**: the need, the benefit to the business, the smallest version worth building, and the strongest reason to leave it unbuilt. Recommend one of build, build the smallest, or drop.
-- Write two lines into the map's **Notes**, where wayfinder keeps an effort's standing preferences: every session consults `chief-of-product`; once the map is clear, `chief-of-product` carries it into a build. When the owner asks for a keeper, add that the first build is one.
+- Record in **Notes** that each session consults `chief-of-product` and that the CPO takes the clear map into a build. Include the MVP reference when it applies. Record a keeper request when the owner makes one.
 - Leave the research tickets to step 2, which dispatches every frontier ticket.
 
 Given a map that already exists, add those Notes lines and go to step 2. When charting surfaces no fog there is no map to settle: take the **concern** route in `SKILL.md` from its step 3, with this conversation as the source.
@@ -59,7 +59,7 @@ Repeat steps 2 to 4 until the map is clear.
 
 ## 5. Plan and build
 
-The map is clear, so hand off the way wayfinder's route runs: `to-spec`, then `to-tickets`, then `implement-spec` on one integration branch. Where the repo has a `VERIFICATION.md`, plan through `plan-with-verification` instead, answering its first question with prototype unless the map's Notes say keeper.
+Hand the clear map to `to-spec`, then `to-tickets`, then `implement-spec` on one integration branch. In repos with `VERIFICATION.md`, use `plan-with-verification` for planning by default outside MVP scope, or by explicit request under MVP scope. On that route, choose prototype unless the map's Notes say keeper.
 
 Done when `implement-spec` has finished: every ticket's work is on the integration branch and the repo's checks pass. The pull request stays unmerged.
 

@@ -22,6 +22,7 @@ Never edit `wayfinder` or the skills it calls. If their behaviour should change 
 
 ## Before you start
 
+- **MVP scope.** Consult the scope reference when the owner requests `mvp-scope`, a map's Notes name it, or the repo instructions link an active `mvp.md`.
 - **Mandate.** Read `docs/agents/product-mandate.md`. If it is missing on the map route, write it with the owner before anything else: one `grilling` round over [MANDATE.md](MANDATE.md), with recommended answers drawn from the repo's product doc, glossary and ADRs. On every other route, carry on with the reserved list in [MANDATE.md](MANDATE.md), mark every settlement shaky, and offer the mandate in the brief.
 - **Tracker.** Before the first issue, spec or map: read `docs/agents/issue-tracker.md`, including its "Wayfinding operations". If it is missing, stop and tell the user to run `/setup-matt-pocock-skills`.
 - **Wrapped skills.** `wayfinder`, `to-spec`, `to-tickets`, `implement`, `implement-spec` and `plan-with-verification` are user-invoked, so the harness may refuse to call them. Then read each one's `SKILL.md` in the sibling folder next to this skill and follow it as written. Where one of them checks in with the user on engineering structure (the seams in `to-spec`, the breakdown in `to-tickets`), the owner has delegated the answer: take your recommendation and carry it into the brief.
@@ -65,7 +66,7 @@ An invocation with no words takes the conversation above as the request: the lat
 
 ## Gap check
 
-Run on a build before release, and alone when the owner asks for a check.
+Run on a build before release, and alone when the owner asks for a check. Under MVP scope, use the reference's **Checks** for the requested journey. Use the full sweep below for other builds or when the owner asks for a wider review.
 
 - List every entry point of the journey, and every role that reaches it. A change made on one screen is owed on every other screen that offers the same action.
 - Walk the journey from each one, in the running product where the repo can run it, else by reading the code path. At the end of each walk, ask whether the need is true for that person.
@@ -74,7 +75,7 @@ Run on a build before release, and alone when the owner asks for a check.
 
 Report gaps most costly first, each as: who hits it, where, what they expected. Fix every gap that is a two-way door and inside the need. A gap outside the need goes in the brief as a follow-up with your recommendation.
 
-Done when every entry point has been walked and each gap is fixed, reserved or listed.
+Done when the selected checks are complete and each gap is fixed, reserved or listed.
 
 ## Direction
 
