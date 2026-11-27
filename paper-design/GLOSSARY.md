@@ -26,6 +26,10 @@ _Avoid_: Handoff, delegation, auto-invoke
 Taking the next action for one Spec from its current state when the user's message names no Job.
 _Avoid_: Rerun all, restart, menu
 
+**Inventory**:
+The Job that reads the code for a named product area and writes its Requirements Inventory.
+_Avoid_: Audit, baseline scan, Structural Inventory
+
 **Sketch**:
 The Job that draws a Sketch from a Sketch Brief, with no Spec.
 _Avoid_: Explore, draft slice
@@ -39,11 +43,11 @@ The Job that creates or refreshes the Paper Manifest.
 _Avoid_: Init, initialization pass
 
 **Size-up**:
-The read-only Job that sizes the design work for a Spec or a named redesign and reports gaps.
+The read-only Job that sizes the design work for a Spec, a chosen Sketch or a named redesign and reports gaps.
 _Avoid_: Scope, scoping slice
 
 **Design**:
-The Job that draws or updates canonical components and screens from a Spec or an evidenced redesign boundary.
+The Job that draws or updates canonical components and screens from a Spec, a chosen Sketch or an evidenced redesign boundary. It writes only to Paper.
 _Avoid_: Design slice, components + screens
 
 **Reconcile**:
@@ -58,9 +62,9 @@ _Avoid_: Parity, review, audit
 The Job that checks Paper against the Tickets and Relays to the implementing skill.
 _Avoid_: Implement, implementation slice
 
-**Write-up**:
-The Job that reads the chosen surfaces and their agreed context, sizes the work and prepares a Relay to code, a Spec or Tickets.
-_Avoid_: Reverse-spec, extract, Paper-to-spec, promote
+**Plan**:
+The Job that carries designed surfaces into a Spec and Tickets: it Relays to `/to-spec` and `/to-tickets`, then writes the Design Section, the UI Ticket links and the Design Ticket.
+_Avoid_: Write-up, reverse-spec, extract, Paper-to-spec, Reconcile Plan
 
 ### Specs and tickets
 
@@ -73,7 +77,7 @@ An open Spec whose Problem Statement, Solution, and User Stories (the sections o
 _Avoid_: Planning-Ready, 4/4 complete
 
 **Design Section**:
-The `## Design` section of a Spec, holding Paper links and the Design Scope. For a redesign it also holds or links the coverage record. Paper-design writes it after approval.
+The `## Design` section of a Spec, holding Paper links and the Design Scope. For a redesign it also holds or links the coverage record. Plan writes it.
 _Avoid_: Design notes, spec page, Paper annotations
 
 **Ticket**:
@@ -81,7 +85,7 @@ A sub-issue of a Spec that delivers one vertical slice of it, with blocking edge
 _Avoid_: Task, checklist item, Implementation Task
 
 **Design Ticket**:
-The human-in-the-loop \"Design in Paper\" Ticket that blocks every UI Ticket of a Spec; paper-design creates it once the Spec has tickets, and only the user closes it.
+The human-in-the-loop \"Design in Paper\" Ticket that blocks every UI Ticket of a Spec; Plan creates it once the Spec has tickets, and only the user closes it.
 _Avoid_: Design task, approval marker
 
 **Visual Requirement**:
@@ -99,7 +103,7 @@ An explicit user approval a Job must have before it changes anything outside the
 _Avoid_: Step, routing decision, implied consent
 
 **Scope Approval**:
-The Gate that lets Design make the writes a shown assessment report listed.
+The Gate that lets Design make the Paper writes a shown assessment report listed.
 _Avoid_: Paper Approval, implied continuation
 
 **Reconcile Audit**:
@@ -161,7 +165,7 @@ The user's stated direction and supplied sources that stand in for a Spec during
 _Avoid_: Exploration Brief, specification, scope report
 
 **Promotion**:
-The move from a Sketch to delivery: Write-up Relays it onward and recommends Design first, so the needed nodes are copied into their canonical owner pages before code is built.
+Design copying a chosen Sketch's nodes into their canonical owner pages under Scope Approval, before Plan carries them to delivery.
 _Avoid_: Implicit implementation, renaming the Sketch Page
 
 ### Paper Manifest
@@ -201,6 +205,12 @@ _Avoid_: Expiration date, routine re-audit
 **Paper Locator Hint**:
 A cached Paper page or node identifier paired with a human name to speed up lookup without becoming authoritative.
 _Avoid_: Canonical ID, source of truth, unnamed locator
+
+### Requirements Inventory
+
+**Requirements Inventory**:
+The repository record at `docs/agents/design-inventory/<area>.md` of every business requirement one product area implements, each with a stable ID, code evidence at an inspected revision, and a Keep, Change or Retire status the user decides. It also holds the area's target-surface coverage and Paper sync pending entries.
+_Avoid_: Structural Inventory, Spec, audit
 
 ### Scope
 

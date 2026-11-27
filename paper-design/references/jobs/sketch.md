@@ -17,8 +17,9 @@ A Paper link. No spec, tracker config, or Gate.
 
 1. [open-paper-file](../steps/open-paper-file.md)
 2. [read-the-ui-system](../steps/read-the-ui-system.md) for the owning workspace, when one exists.
-3. State the Sketch Brief with its surfaces, viewports, fidelity, variations and target page. When a partial reference leaves the intended scope unclear, use the scope question in [confirm-design-intent](../steps/confirm-design-intent.md). Draw once the boundary is clear.
-4. [draw](../steps/draw.md) on the Sketch Page, following the rules below.
+3. When the brief redraws surfaces the product already has, read the area's Requirements Inventory (`docs/agents/design-inventory/`). With none on file, say in one line that existing behavior is unchecked and that Inventory records it, then carry on.
+4. State the Sketch Brief with its surfaces, viewports, fidelity, variations and target page. When a partial reference leaves the intended scope unclear, use the scope question in [confirm-design-intent](../steps/confirm-design-intent.md). Draw once the boundary is clear.
+5. [draw](../steps/draw.md) on the Sketch Page, following the rules below.
 
 ## Where it goes
 
@@ -32,6 +33,7 @@ A Paper link. No spec, tracker config, or Gate.
 - **Vary only what was asked.** Everything else stays in the established design system. A copy comparison changes copy and nothing else. Propose a new visual direction only when asked for one.
 - **Label variants** so the difference reads in the page list and on canvas (`A · Current`, `B · New content`), side by side in the same order per viewport.
 - **Leave out what has no real content** and list it as an open item.
+- **Draw every Keep row.** Each Visible inventory row in the brief's boundary appears on an artboard or is listed as an open item by its ID.
 - **Keep existing content.** Sections, testimonials, and listings stay unless the brief removes them; raise concerns in the report.
 - **Match the fidelity asked for**: wireframes stay grey-box with real labels; hi-fi uses the full system.
 
@@ -39,4 +41,4 @@ A Sketch stays out of the Paper Manifest and carries no verdict.
 
 ## Ends with
 
-A report: the Paper Target, the Sketch Page link, the brief as drawn, what each artboard or row shows, and open items needing real content or a decision. When it looks buildable, offer Write-up in one line (it recommends Design before code). When a spec already exists for it, offer Design instead.
+Report the Paper Target, the Sketch Page link, the brief as drawn, what each artboard or row shows, the inventory IDs each one covers, and open items needing real content or a decision. End the report by offering **Design** as the next Job once the user picks a direction. Design copies the chosen variant onto its owner pages.

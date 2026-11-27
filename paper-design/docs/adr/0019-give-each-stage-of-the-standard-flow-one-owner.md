@@ -1,0 +1,5 @@
+# Give each stage of the standard flow one owner
+
+A new-feature Sketch had no path to canonical pages: Write-up said to run Design first, and Design needed a Spec that only Write-up's Relay could start. The tracker handoff was also split across Write-up, Design and a second Design visit after `/to-tickets`, and that second visit was easy to skip. The standard flow is now Sketch → Design → Plan → Build, with one owner per kind of write. Design accepts a chosen Sketch as its source and writes only to Paper, under Scope Approval. Plan replaces Write-up and owns every tracker step: the Relays to `/to-spec` and `/to-tickets`, then link-design for the Design Section, UI Ticket links and Design Ticket. A Plan request for a Spec authorizes those bounded link-design writes, as a Set-up request authorizes the manifest, so the flow gains no fourth Gate. Build still only checks and Relays.
+
+The cost falls on spec-first work: "design #142" no longer links the drawn surfaces to the Spec, and a gap in the Spec's text goes to Reconcile, so linking takes a separate Plan request. Amends ADRs 0011, 0015, 0016 and 0017.

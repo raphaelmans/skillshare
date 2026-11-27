@@ -1,0 +1,5 @@
+# Inventory existing requirements before drawing
+
+Tracing what an existing product does lived inside Steps that ran only once a target design existed, so a Sketch of an overhaul could drop a permission, an error state or a recovery path before anyone compared it with the code. Inventory is now a Job the user can ask for first. It reads the code for a named product area and writes `docs/agents/design-inventory/<area>.md`: one row per business requirement with a stable ID, code evidence at a recorded revision, and a Keep, Change or Retire status only the user changes. Sketch draws against those rows, Size-up and Design reuse them as the baseline, Plan carries the IDs into the Spec and Tickets, and Build and Compare check delivery against them. The file also gives the design inventory of ADR 0018 one home per area.
+
+Inventory needs no Paper link, Spec or Gate; its request authorizes that one file. Sketch notes a missing inventory in one line and carries on, because a hard stop would block quick variant sketches. The Job is named for the record the skill already called the inventory; "inventory the pages" still means Check-structure.

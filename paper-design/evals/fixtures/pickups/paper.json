@@ -1,0 +1,11 @@
+{
+  "name": "Dispatch",
+  "url": "https://paper.example/f/dispatch",
+  "font": "Inter",
+  "tokens": { "text": "#202124", "surface": "#ffffff", "accent": "#14599a" },
+  "example_pickups": ["Orchard crate", "Market tote"],
+  "pages": [
+    { "id": "dispatch-pickups", "name": "Dispatch / Pickups", "nodes": [] },
+    { "id": "dispatch-components", "name": "Dispatch / Components", "nodes": [] }
+  ]
+}

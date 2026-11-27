@@ -42,7 +42,7 @@ For ordinary spec reconciliation, use code and history as provenance. In a redes
 
 ## The Reconcile Plan
 
-Show one plan listing each Drift Item with evidence, direction, exact Paper nodes or spec text affected, dependency order, and status. Include the Page Ownership Plan and the proposed name of each missing design. If the plan would change a signed-off design, name the affected surfaces and ask the user to reopen its closed Design Ticket before editing them. Resolve open decisions before applying the plan. For a multi-batch redesign, hold the affected items and their dependents while independent batches proceed under the approval for their edits.
+Show one plan listing each Drift Item with evidence, direction, exact Paper nodes or spec text affected, dependency order, and status. When several surfaces depend on the same change, list it once with one owner and name its consumers. Include the Page Ownership Plan and the proposed name of each missing design. If the plan would change a signed-off design, name the affected surfaces and ask the user to reopen its closed Design Ticket before editing them. Resolve open decisions before applying the plan. For a multi-batch redesign, hold the affected items and their dependents while independent batches proceed under the approval for their edits.
 
 Name each edit boundary separately so the approval covers them precisely:
 
@@ -60,4 +60,4 @@ Then rerun the affected agreement rows, checking new or edited nodes and replaci
 
 ## Ends with
 
-A report of aligned, applied, deferred, and unresolved items. Follow-ups: new delivery work → Relay `/to-tickets <spec>`; code that now lags → ask paper-design to build it.
+A report of aligned, applied, deferred, and unresolved items. Follow-ups: new delivery work → Relay `/to-tickets <spec>`, then Plan links the new tickets; code that now lags → ask paper-design to build it.

@@ -1,6 +1,6 @@
 # open-paper-file
 
-Resolve one Paper Target, confirm Paper is connected, and open it. Run this Step first in every Job. Tracker setup checks and the focused target lookup below can precede the first Paper call.
+Resolve one Paper Target, confirm Paper is connected, and open it. Run this Step first in every Job except Inventory, which reads only code. Tracker setup checks and the focused target lookup below can precede the first Paper call.
 
 - **Reads:** the user's message, recent conversation, the Paper Target in `docs/agents/paper.md`, the Paper MCP
 - **May change:** nothing
