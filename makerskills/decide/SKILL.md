@@ -1,0 +1,216 @@
+---
+name: decide
+description: When you have a decision to make and want a structured workflow that picks the load-bearing questions, walks through them, reaches a call (or "wait"), and archives the rationale for future reference. Based on the 37signals Guide to Making Decisions (38 questions) plus house additions like Q39 opportunity cost ("what does saying yes displace?"). Triages to 6–8 relevant questions per decision instead of forcing the full set. Archives every decision to ~/.config/makerskills/decide/archive/ with a revisit date so you can check later whether the call was right. Triggers on "/decide," "help me decide," "should I [X]," "I need to make a decision about," "stuck on a decision," "deciding between," "go/no-go on," "what should I do about." This is both the decision-making workflow AND the decision log — making the decision is the act of logging it.
+metadata:
+  version: 0.5.1
+---
+
+# /decide — Structured decision workflow + archive
+
+Picks load-bearing questions from the 37signals guide, walks through them, reaches a call, archives the rationale with a revisit date.
+
+**Posture:** warm framing, unmoved bar. You're on the user's side, which is exactly why you don't accept "should be fine" as an answer. Attack vague answers, never the person.
+
+## Step 0 — Check it's a live decision
+
+**Resume first.** Look in the archive dir (Step 6) for files whose first line starts with `<!-- in-progress`. If one matches this decision, offer to pick it up: read it, continue at the step it records, and never re-ask a question that already has an answer.
+
+Before intake, screen for three cases where running the full process would be theater. If more than one matches, the first row wins (a signed lease is "already decided" even when the user also wants validation).
+
+| Signal | Do this instead |
+|---|---|
+| **Already decided** — signed, shipped, announced ("I signed the lease yesterday") | Say so plainly. Offer a **retroactive log**: record the call, the expected outcome, and a revisit date so the user finds out whether it was right. Skip triage. Ask only for the rejected alternative, accepted downside, and what "right" looks like. Archive with `**Decide by:** already decided <date>`, `**Decision:** Logged retroactively — <the call>`, and `## Questions` → `none — logged retroactively`. |
+| **Validation-seeking** — "help me feel good about it," "just confirm X" | Name it kindly: *"I can run this, but it only helps if the answer is allowed to be no. Still want it?"* Proceed only on those terms. |
+| **No options yet** — a direction or vibe ("something in health tech") | Ask for 2–3 concrete options, even rough ones. If they have one specific idea but no alternatives, route to `business-brainstorm` ("should this exist?") and stop here. If there's no specific idea at all, say honestly that neither skill can help yet — offer `deep-research` on the space to surface concrete problems worth deciding about. |
+
+## Step 1 — Capture the decision
+
+Get from the user:
+- **The decision** in one sentence (what are we deciding between?)
+- **Stakes**: low / medium / high (how much does this matter?)
+- **Reversibility**: easy / hard / one-way door
+- **Deadline**: when does this need to be decided? Or "open"?
+- **Context** (optional, 1–3 sentences)
+
+Fill in whatever the user already gave you; ask for the rest one or two at a time — not as a five-item form. If any are missing, ask. Don't proceed with vague framing.
+
+Check the answers, not just their presence. "Easy, I can always shut it down" is not easy reversibility if months of time or focus can't be recovered — say so and record what the user settles on. Record unsure answers as given ("medium? idk" → `medium (unsure)`).
+
+**Write the working file now.** Once the frame is settled, run Step 6's migration check, then create the archive file (path and template in Step 6) with the header fields filled and this as its first line:
+
+```markdown
+<!-- in-progress · step: 2 · next: <what comes next> · then: <remaining planned questions> · owed: <claims still to push on, and where> -->
+```
+
+Include only the header fields, Context, and an empty `## Questions` — add the later sections at finalization, so an unfinished file never looks finished. Update the marker whenever the step changes (once triage picks the questions, `then:` lists the ones still to ask) and after every recorded answer, which goes under `## Questions` with its `(unanswered)` tag, if any. Multi-turn answers are recorded as all replies joined with ` / `. The slug names the decision in 3–6 words (`drop-1500-retainers`), which is what a later resume matches on. The file is the session's memory — if the session dies, the next one resumes from it. Don't touch `INDEX.md` until Step 6.
+
+## Step 2 — Triage the question set
+
+Read `references/questions.md` for the full set (the 37signals 38 + house additions, e.g. Q39 opportunity cost) and category mapping. Pick 6–8 based on the decision's characteristics:
+
+**Default 5 (always ask, in this order):**
+- Q9 — First instinct? (capture before "thinking" muddies it)
+- Q1 — Does this decision actually need to be made?
+- Q2 — Is the right person making this decision?
+- Q8 — How easily can we reverse it? (skip if Step 1 already settled it — carry that answer over)
+- Q3 — A year from now, how will we feel about this?
+
+**Add based on type:**
+
+| If… | Add |
+|---|---|
+| Reversibility = hard / one-way door | Q14 (is there a wrong decision?), Q17 (knock-on effects), Q34 (principles bent) |
+| Time pressure | Q5 (why hesitating?), Q15 (different tomorrow?), Q22 (when do we have to decide?) |
+| Multiple people involved | Q21 (someone else's practice rep?), Q27 (would another opinion help?), Q35 (multiple people deciding what one should?) |
+| Lots of data / analysis | Q19 (what missing info would change it?), Q26 (data vs gut?), Q9 deepened |
+| Recurring decision | Q11 (last time?), Q23 (one-and-done or repeating?) |
+| Customer-facing | Q24 (anyone outside depending?), Q25 (customer vs us impact?) |
+| Money decision | Q38 (in the end, is this about money?), Q36 (return on effort?), Q39 (what does yes displace?) |
+| Big time / focus commitment | Q39 (opportunity cost), Q36 (return on effort?), Q20 (creates or eliminates work?) |
+| Stuck / not deciding | Q4 (why hasn't it been made already?), Q10 (what if we don't decide?), Q31 (do you even care?) |
+
+Cap at ~8 questions. More than that turns into analysis paralysis (which is itself one of the things this skill exists to prevent).
+
+When several rows apply and you're over the cap, keep the questions whose answer could **flip the call**; drop ones that would only confirm it. A row that matches the stated reversibility (one-way door → irreversibility row) beats a row you inferred.
+
+Tell the user which questions you picked and why, then proceed.
+
+## Step 3 — Walk through
+
+Ask the questions one at a time. Offer a tight cluster only if the user's answers are coming back specific — clustering a vague answerer just speeds up the vagueness.
+
+**Apply, don't recite.** Fold the user's own facts into each question. Not "What does yes displace?" but "You said the contractor leaves Nov 15 and you'd fund the hire from the ads budget — what happens to signups when ads go to zero?"
+
+**Hold the bar.** When an answer is a non-answer — "should be fine," "we'll figure it out," "probably not a big deal," "I think people want it" — don't record it and move on:
+1. Stay on the question and name it: *"I'm going to stay here — that's a hope, not an answer."*
+2. Offer 1–2 sharper candidate answers so they're not facing a blank ("Is it 'I'll spend ~10 hrs/week, cutting main-product work in half' or 'I'll only build on weekends'?"), or ask for one specific fact (a number, a name, a date, evidence).
+3. If it's still mush after two pushes, record it verbatim and tag it `(unanswered)`. Move on — the tag carries into Step 4.
+
+Candidate answers are prompts, not facts. A number or claim you suggested only enters the archive if the user states it or explicitly adopts it — and then it's quoted as theirs.
+
+Whether sharp or tagged, capture the final answer verbatim — don't paraphrase into corporate-speak.
+
+**Impatient user** ("just tell me yes or no") — applies from the first message on, not just here: don't lecture and don't cave. Use Q28 — *"If you had to decide right this second, what would you do?"* — record it as the Q9 first instinct (if Q9 is already captured, skip Q28), and tell them how many questions are left. Keep the triage announcement to one line.
+
+For Q9 (first instinct), get the answer BEFORE diving into analysis. The point is to surface the gut call so we can later check if "analysis" was just rationalization. Record the gut unchallenged — but if it carries a factual claim ("people want it"), note the claim and push on it at the most relevant later question. A gut call is sacred; the facts it leans on aren't.
+
+## Step 4 — Reach a call
+
+Synthesize the answers into a decision. Options:
+
+- **Decide now** — answers point to a clear call
+- **Decide smaller** — break into 2–3 smaller decisions (Q7)
+- **Wait** — flag what info / time would change the answer (Q19, Q15)
+- **Don't decide** — the decision doesn't need to be made (Q1, Q10)
+- **Wrong person** — kick to the right decider (Q2, Q35)
+
+State the call clearly. No hedging.
+
+Before stating it, run three checks:
+
+- **Weak inputs route to Wait or Decide smaller.** If any load-bearing answer is tagged `(unanswered)`, "Decide now" is off the table. The unhedged call is **Wait** (naming the missing fact, per Q19) or **Decide smaller** (the cheapest step that produces that fact — e.g., a waitlist before a build). A Decide-smaller test needs a pass/fail bar from the user ("50 signups in 2 weeks") before you archive it — otherwise it can't fail.
+- **Instinct match needs independent support.** If the call matches Q9, check that at least one answer adds a reason the gut didn't already supply. If every answer just restates the instinct, say so — that's the rationalization Q9 exists to catch.
+- **Real-decision check.** Name the smart alternative being rejected and the downside being accepted. If you can't name a downside, the user hasn't faced the cost yet — ask before calling it.
+
+As soon as the call (and any pass/fail bar and accepted downside) is agreed, write the `## Decision` section into the working file — don't hold it in chat until finalization.
+
+**Pushback after the call:** re-synthesize only when the user brings new information (a stakeholder's data, a constraint you didn't have) — rerun the real-decision check on the new call, and if the new info answers an `(unanswered)` question, annotate the tag rather than deleting it. If it's just discomfort, hold the call and say why.
+
+## Step 5 — Set the revisit
+
+Pick a revisit date based on when consequences would show up:
+- Decisions about tools/processes: 30 days
+- Decisions about strategy/positioning: 90 days
+- Decisions about hires/partnerships: 90–180 days
+- Decisions about products/launches: 30–60 days post-launch
+
+Write what to look for on the revisit ("did MRR move? did the partner ship? do clients still ask for X?").
+
+## Step 6 — Archive
+
+Archives live in `${MAKERSKILLS_CONFIG:-$HOME/.config/makerskills}/decide/archive/` (create the directory if missing). Never write archives inside the skill's own folder — skill installs and upgrades re-sync from source and wipe anything saved there.
+
+**Migration:** if this skill's folder contains an old `references/decisions-archive/` with user entries, move those files into the archive directory before writing anything new.
+
+Finalize the working file at `<archive dir>/<YYYY-MM-DD>-<slug>.md` (created in Step 1): fill every remaining section and **delete the `<!-- in-progress … -->` line**. A retroactive log (Step 0) is written here in one go. Template:
+
+```markdown
+# Decision: <one-line>
+
+**Date:** YYYY-MM-DD
+**Decide by:** <date or "open">
+**Reversibility:** easy / hard / one-way door
+**Stakes:** low / medium / high
+
+## Context
+<1–3 sentences>
+
+## Questions
+
+### <Q3 phrasing>
+<answer>
+
+### <Q8 phrasing>
+<answer>
+
+(only questions actually applied — heading is the question text, not "Q3")
+
+## Decision
+**<the call, stated clearly>**
+
+**Rejected alternative:** <the smart option not chosen>
+**Accepted downside:** <the cost the user signed up for>
+**Revised from:** <earlier call and what changed it — omit if the call never changed>
+
+## Rationale
+<2–3 sentences synthesizing the answers. Quote — don't paraphrase — any answer tagged (unanswered); never upgrade "should be fine" into "low risk.">
+
+## Weak spots
+<answers tagged (unanswered) or unsure, verbatim — or "none">
+
+## Expected outcome
+<what should be true if this was right, by <date> — built from the user's own signals; don't invent targets they didn't state>
+
+## Revisit
+**<YYYY-MM-DD>** — <what to look for>
+
+## Source
+Questions adapted from [The 37signals Guide to Making Decisions](https://37signals.com/how-we-make-decisions)
+```
+
+Append to `<archive dir>/INDEX.md` (create if missing):
+
+```markdown
+- 2026-06-16 — [<decision>](./<filename>.md) — **<call>** — <one-line rationale> — revisit 2026-09-16
+```
+
+If the entry has weak spots, end the rationale with `(N weak spots)` so a future grep doesn't read a mush-based call as a confident one.
+
+## Step 7 — Surface
+
+Show the archive entry in chat. Tell the user the archive path. Offer:
+
+- *"Want me to schedule a /loop reminder for the revisit date?"* (would use the `loop` skill to fire at the right time)
+- *"Push to Notion as a decision card?"*
+- *"Need a follow-up decision after this one?"*
+
+## Future enhancements
+
+- Auto-create a calendar event or cron reminder for the revisit (via `loopify` or your agent's own scheduler if it has one; otherwise a calendar event)
+- Composable with `business-brainstorm` — brainstorm scores the idea on 9 dimensions; `decide` formalizes the go/no-go after
+- Grep past decisions for patterns ("show me decisions I made that were marked 'easy reverse' but didn't reverse")
+
+## Composes with
+
+- `business-brainstorm` — brainstorm → decide is a natural pipeline for "should I build X"
+- `deep-research` — when a decision is waiting on info (Q19), trigger research first
+- Memory — load `feedback_*.md` for principles that might be at play (Q34)
+- `loopify`, or your agent's own scheduler: for revisit reminders
+
+## Notes on quality
+
+- **Don't ask all 38.** The point of triage is to skip questions that don't apply. Eight relevant questions > thirty-eight padded ones.
+- **Don't soften the call.** "Probably yes, lean toward, maybe should" wastes the skill. Pick. On weak inputs, the honest pick is Wait or Decide smaller — not a confident yes.
+- **Don't soften the bar either.** Recording "should be fine" verbatim without pushing first is the most common failure. Warm tone, unmoved bar.
+- **The first instinct (Q9) is sacred.** Always capture it before analysis. If the final call differs from the first instinct, the rationale needs to explain why — that's the whole point of the question.
+- **Archive every decision, even small ones.** The compounding value comes from being able to grep "what did I decide about pricing last year" — and that requires writing them down even when they feel obvious in the moment.
