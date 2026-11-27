@@ -1,0 +1,3 @@
+interface:
+  display_name: "MVP Scope"
+  short_description: "Rescope a plan or task to a useful first version"
