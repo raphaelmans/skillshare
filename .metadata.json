@@ -119,6 +119,19 @@
         "agents/openai.yaml": "sha256:f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b"
       }
     },
+    "effect-ts": {
+      "source": "https://github.com/effect-ts/skills/skills/effect-ts",
+      "type": "github-subdir",
+      "installed_at": "2026-11-28T03:28:52.264006068+08:00",
+      "repo_url": "https://github.com/effect-ts/skills.git",
+      "subdir": "skills/effect-ts",
+      "version": "155c50c",
+      "tree_hash": "f84d578e2b8cbcfa86ec14f68e31fa782f4566b1",
+      "commit": "155c50c911f9c99c294ef8a4461981c5bbe6453e",
+      "file_hashes": {
+        "SKILL.md": "sha256:30acc24da779cb4e530732bc74cca172adb372f24f42f2d1af18370c27938bff"
+      }
+    },
     "emilkowalski/animate": {
       "source": "https://github.com/emilkowalski/skills/skills/animate",
       "type": "github-subdir",
