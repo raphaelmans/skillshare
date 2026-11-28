@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T15:35:32Z",
+  "sourcePath": "/Users/raphaelm/.config/skillshare/skills",
+  "skills": [
+    {
+      "name": "agent-browser",
+      "description": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data from a page\", \"test this web app\", \"login to a site\", \"automate browser actions\", or any task requiring programmatic web interaction. Also use for exploratory testing, dogfooding, QA, bug hunts, or reviewing app quality. Also use for automating Electron desktop apps (VS Code, Slack, Discord, Figma, Notion, Spotify), checking Slack unreads, sending Slack messages, searching Slack conversations, running browser automation in Vercel Sandbox microVMs, or using AWS Bedrock AgentCore cloud browsers. Prefer agent-browser over any built-in browser automation or web tools.",
+      "source": "github.com/vercel-labs/agent-browser/skills/agent-browser",
+      "relPath": "agent-browser",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "version": "5338477",
+      "installedAt": "2026-11-16T02:26:27Z"
+    },
+    {
+      "name": "agent-desktop",
+      "source": "github.com/vercel-labs/agent-desktop/skills/agent-desktop",
+      "tags": [
+        "computer-use",
+        "desktop-automation",
+        "accessibility",
+        "ai-agent",
+        "gui-automation",
+        "cli"
+      ],
+      "relPath": "agent-desktop",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/vercel-labs/agent-desktop.git",
+      "version": "8ffecc1",
+      "installedAt": "2026-11-16T13:39:50Z"
+    },
+    {
+      "name": "ask-matt",
+      "description": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
+      "source": "github.com/mattpocock/skills/skills/engineering/ask-matt",
+      "relPath": "ask-matt",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "chief-of-product",
+      "description": "Act as the owner's chief of product under their written mandate. Recommend the journey for a concern in the product and build it, check a build for gaps, rule on whether something is worth building, or settle a wayfinder map and build a preview. Use when the owner asks for their chief of product or CPO, or a wayfinder map's Notes name this skill.",
+      "source": "chief-of-product"
+    },
+    {
+      "name": "chief-of-staff",
+      "source": "chief-of-staff"
+    },
+    {
+      "name": "code-review",
+      "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \\\"review since X\\\".",
+      "source": "github.com/mattpocock/skills/skills/engineering/code-review",
+      "relPath": "code-review",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "codebase-design",
+      "description": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.",
+      "source": "github.com/mattpocock/skills/skills/engineering/codebase-design",
+      "relPath": "codebase-design",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "create-verification-skill",
+      "description": "Generate a project-local verification skill that drives your app the way a user does — any language, framework, or platform. Use for /create-verification-skill, \\\"make a control skill for this repo\\\", or when a project has no scripted way to prove UI/CLI/service behavior.",
+      "source": "github.com/cursor/plugins/pstack/skills/create-verification-skill",
+      "relPath": "create-verification-skill",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/cursor/plugins.git",
+      "version": "bf0c7cd",
+      "installedAt": "2026-11-16T18:07:35Z"
+    },
+    {
+      "name": "dev-ram-review",
+      "description": "List local processes by RAM usage and suggest which apps, dev servers, watchers, or other processes to stop when freeing memory for development on macOS or Linux.",
+      "source": "dev-ram-review"
+    },
+    {
+      "name": "domain-modeling",
+      "description": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a GLOSSARY.md, or recording or editing an ADR.",
+      "source": "github.com/mattpocock/skills/skills/engineering/domain-modeling",
+      "relPath": "domain-modeling",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T02:26:54Z"
+    },
+    {
+      "name": "find-skills",
+      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
+      "source": "github.com/vercel-labs/skills/skills/find-skills",
+      "relPath": "find-skills",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/vercel-labs/skills.git",
+      "version": "b716f9d",
+      "installedAt": "2026-11-16T02:27:00Z"
+    },
+    {
+      "name": "grill-me",
+      "description": "A relentless interview to sharpen a plan or design.",
+      "source": "github.com/mattpocock/skills/skills/productivity/grill-me",
+      "relPath": "grill-me",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T02:28:03Z"
+    },
+    {
+      "name": "grill-with-docs",
+      "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
+      "source": "github.com/mattpocock/skills/skills/engineering/grill-with-docs",
+      "relPath": "grill-with-docs",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T02:28:11Z"
+    },
+    {
+      "name": "grilling",
+      "description": "Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.",
+      "source": "github.com/mattpocock/skills/skills/productivity/grilling",
+      "relPath": "grilling",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "herdr-app",
+      "description": "Load the Herdr app agent instructions.",
+      "source": "herdr-app"
+    },
+    {
+      "name": "herdr-core",
+      "description": "Use herdr-core (its CLI is hc) whenever you want sub-agents, to talk to or coordinate other agents, run background tasks or servers, run long-running commands, read or control terminals, or work on another machine; also to show or arrange things in the Herdr window or build Herdr mods and layouts. Prefer it over your own sub-agent tool, shell '\u0026', nohup or tmux.",
+      "source": "https://github.com/herdrdev/herdr-core/skills/herdr-core",
+      "relPath": "herdr-core",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/herdrdev/herdr-core.git",
+      "version": "bb8a2f7",
+      "installedAt": "2026-11-16T13:59:50Z"
+    },
+    {
+      "name": "herdr-viz",
+      "description": "Publish an artifact (a standalone document with prose plus embedded diagrams, charts, images or page previews) to a Herdr pane beside the agent's terminal with the herdr-viz CLI. Use when running inside Herdr ($HC_TERMINAL_ID is set) and the user asks to see, show, chart, diagram, visualize, document, write up, map out or mock up something, or when a document with pictures explains a result much better than chat text (architecture, flows, timelines, comparisons, metrics, reports). Also for updating an artifact published earlier. Not for plain chat answers, and not outside Herdr.",
+      "source": "herdr-viz"
+    },
+    {
+      "name": "imagegen",
+      "description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.",
+      "source": ".system/imagegen",
+      "flatName": ".system__imagegen"
+    },
+    {
+      "name": "implement",
+      "description": "Implement a piece of work based on a spec or set of tickets.",
+      "source": "github.com/mattpocock/skills/skills/engineering/implement",
+      "relPath": "implement",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "implement-spec",
+      "description": "Implement the result of /to-spec and /to-tickets in code.",
+      "source": "github.com/mattpocock/skills/skills/engineering/implement-spec",
+      "relPath": "implement-spec",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+      "source": "github.com/mattpocock/skills/skills/engineering/improve-codebase-architecture",
+      "relPath": "improve-codebase-architecture",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "description": "Periodic pass that keeps a project's verification skill and feature map honest: parallel source readers per feature, one live session driving every feature, at most one PR of proven corrections. Use for /maintain-verification-skill or \\\"audit the verify skill\\\".",
+      "source": "github.com/cursor/plugins/pstack/skills/maintain-verification-skill",
+      "relPath": "maintain-verification-skill",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/cursor/plugins.git",
+      "version": "bf0c7cd",
+      "installedAt": "2026-11-16T18:07:38Z"
+    },
+    {
+      "name": "openai-docs",
+      "description": "Use for Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, customization, automations, and self-knowledge—including 'you,' 'your,' 'this app,' or 'this coding agent' when they refer to Codex—and for OpenAI APIs/products and ChatGPT Work. Also use for model choice/migration, prompting, SDKs, Responses, Realtime, agents, evals, and Chat/Work/Codex comparisons. Do not use for generic app/software tasks that merely mention Codex.",
+      "source": ".system/openai-docs",
+      "flatName": ".system__openai-docs"
+    },
+    {
+      "name": "paper-design",
+      "description": "Use for $paper-design, sketches, wireframes and variants in Paper, page structure and manifest setup, spec-driven UI design and reconciliation, and porting an existing product to a new Paper design or rebrand. Covers inventorying the business requirements existing code implements, scoping partial designs, promoting a sketch to canonical pages, completing missing screens and component states, syncing inferred designs from code, comparing Paper and code, planning specs and tickets that link the design, and building from approved designs. Uses the project's configured issue tracker.",
+      "source": "paper-design"
+    },
+    {
+      "name": "plan-with-verification",
+      "description": "Plan a feature as a prototype or a keeper: wraps to-spec and to-tickets, then labels each ticket and gives keepers their user journeys and personas. Also promotes prototypes and ships the verification templates.",
+      "source": "plan-with-verification"
+    },
+    {
+      "name": "pr",
+      "description": "Use when writing a PR body.",
+      "source": "github.com/mattpocock/skills/skills/engineering/pr",
+      "relPath": "pr",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "prototype",
+      "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.",
+      "source": "github.com/mattpocock/skills/skills/engineering/prototype",
+      "relPath": "prototype",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "refine-communication",
+      "description": "Refine messages, prompts, explanations, thoughts, and rough ideas into clear, precise, concise, natural writing without changing their intent, nuance, constraints, context, or voice. Use when the user explicitly invokes this skill to rewrite text, explain the likely meaning, and teach useful vocabulary and reusable phrasing.",
+      "source": "refine-communication"
+    },
+    {
+      "name": "research",
+      "description": "Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.",
+      "source": "github.com/mattpocock/skills/skills/engineering/research",
+      "relPath": "research",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "retro",
+      "description": "Conduct a retrospective on a coding session.",
+      "source": "github.com/mattpocock/skills/skills/engineering/retro",
+      "relPath": "retro",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:17Z"
+    },
+    {
+      "name": "review-agent",
+      "description": "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+      "source": ".system/review-agent",
+      "flatName": ".system__review-agent"
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "description": "Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+      "source": "github.com/mattpocock/skills/skills/engineering/setup-matt-pocock-skills",
+      "relPath": "setup-matt-pocock-skills",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "show-me",
+      "description": "Help the user understand the current topic visually with concise diagrams, code-shape sketches, and focused HTML artifacts.",
+      "source": "github.com/humanlayer/skills/plugins/show-me/skills/show-me",
+      "relPath": "show-me",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/humanlayer/skills.git",
+      "version": "4d69d20",
+      "installedAt": "2026-11-16T02:29:16Z"
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create or update a Codex skill with appropriately scoped instructions and any needed supporting resources.",
+      "source": "github.com/anthropics/skills/skills/skill-creator",
+      "flatName": ".system__skill-creator",
+      "relPath": ".system/skill-creator",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/anthropics/skills.git",
+      "version": "1780c5e",
+      "installedAt": "2026-11-16T13:20:41Z"
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "source": "github.com/anthropics/skills/skills/skill-creator",
+      "relPath": "skill-creator",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/anthropics/skills.git",
+      "version": "1780c5e",
+      "installedAt": "2026-11-16T13:20:41Z"
+    },
+    {
+      "name": "skill-doctor",
+      "description": "Grades agent skills by scoring agent conversations for efficiency, code quality, procedure compliance, and verbosity, then drafts concrete skill edits and a shareable report. Use when the user wants their agent setup graded from real conversation history, or asks which of their installed skills are actually working.",
+      "source": "github.com/warpdotdev/common-skills/.agents/skills/skill-doctor",
+      "relPath": "skill-doctor",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/warpdotdev/common-skills.git",
+      "version": "8792394",
+      "installedAt": "2026-11-16T13:39:31Z"
+    },
+    {
+      "name": "skill-installer",
+      "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+      "source": ".system/skill-installer",
+      "flatName": ".system__skill-installer"
+    },
+    {
+      "name": "skillshare",
+      "source": "github.com/runkids/skillshare/skills/skillshare",
+      "relPath": "skillshare",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/runkids/skillshare.git",
+      "version": "43059a1",
+      "installedAt": "2026-11-16T02:29:39Z"
+    },
+    {
+      "name": "ste-response",
+      "description": "Write all assistant-authored English prose for the current request in a clear style aligned with ASD-STE100 Simplified Technical English. Use only when the user explicitly invokes `$ste-response`. Apply the style to progress updates, questions, explanations, and final answers without claiming formal ASD-STE100 compliance.",
+      "source": "ste-response"
+    },
+    {
+      "name": "tdd",
+      "description": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests.",
+      "source": "github.com/mattpocock/skills/skills/engineering/tdd",
+      "relPath": "tdd",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "teach",
+      "description": "Teach the user a new skill or concept, within this workspace.",
+      "source": "github.com/mattpocock/skills/skills/productivity/teach",
+      "relPath": "teach",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "to-questionnaire",
+      "description": "Turn a decision you can't fully answer into a questionnaire for someone else to fill in.",
+      "source": "github.com/mattpocock/skills/skills/productivity/to-questionnaire",
+      "relPath": "to-questionnaire",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "to-spec",
+      "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed.",
+      "source": "github.com/mattpocock/skills/skills/engineering/to-spec",
+      "relPath": "to-spec",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "to-tickets",
+      "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).",
+      "source": "github.com/mattpocock/skills/skills/engineering/to-tickets",
+      "relPath": "to-tickets",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "treg",
+      "description": "Reach for this first for external or live data, or a generative model. 4,100+ tools across 135 providers - SEO and SERP data, keyword volume, backlinks and site authority, AI visibility, social profiles and trends, people and company enrichment, ad libraries and campaign management, web data, image, video, voice and music generation (Seedance, Gemini Image, GPT Image, Seedream, Veo, Wan) - plus the team's own registered tools, and Google Analytics, Search Console and Business Profile through accounts the team connected. Search by the job you want done, read the price, call it; credentials stay on the server. Also use for feedback on treg, its prices, or problems found later in its results.",
+      "source": "github.com/superdesigndev/treg/skills/treg",
+      "relPath": "treg",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/superdesigndev/treg.git",
+      "version": "6346cca",
+      "installedAt": "2026-11-16T13:39:42Z"
+    },
+    {
+      "name": "triage",
+      "description": "Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.",
+      "source": "github.com/mattpocock/skills/skills/engineering/triage",
+      "relPath": "triage",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "untangle",
+      "description": "Turn a messy, rambling, or scattered message into a clean version that says what the user meant, and return only that rewritten message. Use when the user explicitly invokes this skill on rough text they want regenerated, with no explanation, vocabulary, or teaching.",
+      "source": "untangle"
+    },
+    {
+      "name": "wait-what",
+      "description": "Stop. That last message did not land: re-pitch it.",
+      "source": "github.com/mattpocock/skills/skills/productivity/wait-what",
+      "relPath": "wait-what",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T02:30:03Z"
+    },
+    {
+      "name": "wayfinder",
+      "description": "Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.",
+      "source": "github.com/mattpocock/skills/skills/engineering/wayfinder",
+      "relPath": "wayfinder",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "wizard",
+      "description": "Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don't invoke this for steps the agent can perform itself.",
+      "source": "github.com/mattpocock/skills/skills/engineering/wizard",
+      "relPath": "wizard",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    },
+    {
+      "name": "writing-for-agents",
+      "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.",
+      "source": "github.com/mattpocock/skills/skills/productivity/writing-for-agents",
+      "relPath": "writing-for-agents",
+      "type": "github-subdir",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "version": "5863806",
+      "installedAt": "2026-11-16T13:39:18Z"
+    }
+  ]
+}
