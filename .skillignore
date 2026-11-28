@@ -16,3 +16,7 @@ stately
 state-management
 xstate-v6
 ai-sdk
+agent-browser
+effect-ts
+herdr-viz
+treg
